@@ -14,24 +14,37 @@
 <body>
     <div class="bkgd--img"><img src="Assets/jdrBKG.png" alt="" srcset=""></div>
     <header>
-        <div class="header--title">
-            <H1>JDR</H1>
-        </div>
+            <h1>JDR</h1>
         <div class="header--options">
-            <label for="bonus">Bonus :</label>
-            <input type="text" name="bonus" class="input--bonus">
-            <span class="input--space"></span>
-            <label for="malus">Malus :</label>
-            <input type="text" name="malus" class="input--malus">
-            <span class="input--space"></span>
-            <label for="cheatMod">CheatMod :</label>
-            <input type="checkbox" name="cheatMod" class="input--cheat">
-                <div class="cheatMod--options">   
-                    <label for="reussitCrit">Réussite Critique</label>
-                    <input type="checkbox" name="reussitCrit" class="cheat--succes">
-                    <label for="failCrit"><span>é</span>chec Critique</label>
-                    <input type="checkbox" name="failCrit" class="cheat--fail">
+            <span class="options Bonus"></span>
+                <label for="bonus">Bonus :</label>
+                <input type="text" name="bonus" class="input--bonus">
+            </span>
+            
+            <span class="input--space"></span><!-- barre d'espace entre les options -->
+
+            <span class="options Malus" >
+                <label for="malus">Malus :</label>
+                <input type="text" name="malus" class="input--malus">
+            </span>
+            <span class="input--space"></span><!-- barre d'espace entre les options -->
+
+            <div class="options cheatMod"> 
+                <label for="cheatMod">CheatMod :</label>
+                <input type="checkbox" name="cheatMod" class="input--cheat cheat">
+
+                <div class="cheatMod inactiveted"> <!-- création options cheatmode -->
+                    <div class="Crit">
+                         <label for="reussitCrit">Réussite Critique</label>
+                    <input type="checkbox" name="reussitCrit" class="cheat succes">
+                    </div>
+                   <div class="Crit">
+                       <label for="failCrit"><span  class="accent">é</span>chec Critique</label>
+                    <input type="checkbox" name="failCrit" class="cheat fail">
+                   </div>
+                    
                 </div>
+            </div>    <!-- fin div options cheatMod --> 
         </div>
     </header>
     <section>

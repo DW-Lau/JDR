@@ -10,17 +10,17 @@
     justify-content: $justify;
     align-items: $align;
 }
-h1,p,label{
+h1,p,label,input{
     color:#fff;font-family: 'Original Surfer', cursive;
 }
 body{
-    height: 100vh;
-    width: 100%;
+    
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    gap: 20px;
+    height: 100vh;
+    width: 100%;
        .bkgd--img{
            position: absolute;
            top: 0;
@@ -36,26 +36,79 @@ body{
        header, section, footer{
            z-index: 15;
        }
-         header { 
-            grid-area: 2 / 2 / 4 / 10;font-family: 'MedievalSharp', cursive;
-            .header--title { 
-                grid-area: 2 / 2 / 4 / 5; 
-                
+        header { 
+            grid-area: 2 / 2 / 4 / 10;//emplacement du header
+            font-family: 'MedievalSharp', cursive;
+            height: 186px;
+            @include aligment(row,space-between ,flex-start );//flexbox pour les élements à l'intérieur
                 h1{
-                    
+                    max-width: 417px;
+                    text-align: center;
                     font-size: 180px;
-                    line-height: 200px;
+                    line-height: 160px;
                     color:rgb(211, 178, 0);
                     opacity: 0.5;
                     -webkit-text-stroke: 1px #242424;
                 }
-            }
-            .header--options { 
-                grid-area: 2 / 6 / 4 / 10;
+                .header--options { 
+                    max-width:765px;
+                    margin: 0;
+                    @include aligment(row,space-evenly ,flex-start );
+                    .cheatMod{
+                      max-width: 200px;
+                        .cheat  {//checkbox de l'input cheatbox modifié
+                            width:25px;
+                            height: 25px;
+                        }
+                    }
 
-            }
-
-         }
+                    label{
+                        font-size: 2rem;
+                        font-family: "MedievalSharp";
+                    }
+                    
+                    input{
+                        max-width:100px;
+                        border:1px #fff;
+                        font-size:1.9rem;
+                        color:#fff;
+                        text-align: center;
+                        border-style:none;
+                        border-bottom-style:dotted;
+                        background: transparent;
+                      
+                    }   
+                    
+                    .input--space{
+                        align-self: flex-start;
+                        display: block;
+                        width: 2px;
+                        height: 36px;
+                        background-color: #fff;
+                        margin: 0 15px;
+                    }
+                    .inactiveted{//Style par défault. Changement de menu depuis le JS
+                        display: none;
+                    }
+                    .activeOptions{
+                        @include aligment(column,space-evenly ,flex-start );
+                        .Crit{
+                           @include aligment(row,space-between ,center );
+                           width: 100%; height:25px;
+                           .accent{
+                                text-transform: capitalize;
+                            }
+                            label{
+                                font-size: 1.1em;
+                            } 
+                            .cheat  {//checkbox de l'input cheatbox modifié
+                                width:20px;
+                                height: 20px;
+                            }
+                        }
+                    }
+                }
+        }
         section{
             grid-area: 4 / 2 / 8 / 10;
             .div3 { grid-area: 4 / 2 / 8 / 5; }
