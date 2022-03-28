@@ -1,21 +1,22 @@
-console.log("hello world");
 let detectCheatMod=document.querySelector(".input--cheat");
-let menuCheatMod=document.querySelector(".cheatModMenu");
-// if(detectCheatMod.checked==true){
-//     console.log("soir")
-// }
+let menuCheatMod=document.querySelector("[data-info]");//récupére  la div cachée "cheatModMenu"
 
-function optionsMenu(){console.log(menuCheatMod.className);
-    if(menuCheatMod.className="inactiveted"){
-        menuCheatMod.classList.remove("inactiveted");
-        menuCheatMod.classList.add("activeOptions");
-    }else if (menuCheatMod.className="activeOptions"){
-        menuCheatMod.classList.remove("activeOptions");
-        menuCheatMod.classList.add("inactiveted");
-        
-        console.log(menuCheatMod.className);
-    }
-    
+function affichageMenu(){//modification du name class pour faire apparaître la div voulue
+    let classMenu=menuCheatMod.className;
+    switch (classMenu){
+         case "inactivated": 
+            menuCheatMod.classList.add("activeOptions"); //apparition de la div par le css
+            menuCheatMod.classList.remove("inactivated");
+            
+            break;
+        case "activeOptions":
+            menuCheatMod.classList.add("inactivated");//désactive la div par le css
+            menuCheatMod.classList.remove("activeOptions");
+             
+             break;
+        default : 
+        console.log("Une erreur est survenue"); 
+     }
+
 }
-
-detectCheatMod.addEventListener("click", optionsMenu);
+detectCheatMod.addEventListener("click", affichageMenu);
