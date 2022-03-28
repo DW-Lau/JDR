@@ -10,6 +10,13 @@
     justify-content: $justify;
     align-items: $align;
 }
+@mixin flexAlign($wrap,$justify,$align) {
+    display: flex;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+$fontMdvl:'MedievalSharp', cursive;
 h1,p,label,input{
     color:#fff;font-family: 'Original Surfer', cursive;
 }
@@ -38,10 +45,11 @@ body{
        }
         header { 
             grid-area: 2 / 2 / 4 / 10;//emplacement du header
-            font-family: 'MedievalSharp', cursive;
+            font-family:$fontMdvl;
             height: 186px;
             @include aligment(row,space-between ,flex-start );//flexbox pour les élements à l'intérieur
                 h1{
+                    font-family:$fontMdvl;
                     max-width: 417px;
                     text-align: center;
                     font-size: 180px;
@@ -105,12 +113,72 @@ body{
                         }//fin cheatMod
                 }//fin header--options
         }
+        //----------------------------Fin Section HEADER----------------------------
         section{
             grid-area: 4 / 2 / 8 / 10;
-            .div3 { grid-area: 4 / 2 / 8 / 5; }
-            .div4 { grid-area: 4 / 5 / 8 / 7; }
-            .div5 { grid-area: 4 / 7 / 8 / 10; }
+            @include aligment(row,space-evenly,center );
+            .draw ,.result{
+                width: 40%;
+                @include flexAlign(wrap,space-around,center);
+                }
+            .draw{
+                .draw--number,.draw--dice{
+                    width: 50%;
+                }
+                .draw--number p{
+                    font-family:$fontMdvl;
+                    text-align: center;
+                    font-size:15em;
+                    color: #fff;
+                    -webkit-text-stroke: 5px #957D03;
+                    text-shadow: 5px 4px 25px #000000;
+                }
+                .draw--btn{
+                    max-width: 100px;
+                    max-height: 60px;
+                    text-align: center;
+                    
+
+                    .fa-solid{ 
+                        background-color: #957D03;
+                        color: #fff;
+                        font-size:3em ;
+                        padding:10px;
+                        border: #fff 2px dashed;
+                        border-radius: 5px;
+                    }
+                }
+                .draw--btn:hover{
+                    .fa-solid{
+                        background-color: #5c4d02;
+                        font-size: 3.2em;
+                    }
+                }
+            }//Fin DRAW
+            .equal { 
+                width: 15%;
+                img{
+                     max-width:272px;
+                }
+            }
+            .result{
+                .result--number,.result--swordsShield{
+                    width: 50%;
+                }
+                .result--number p{
+                    font-family:$fontMdvl;
+                    text-align: center;
+                    font-size:15em;
+                    color: #fff;
+                    -webkit-text-stroke: 5px #957D03;
+                    text-shadow: 5px 4px 25px #000000;
+                }
+                .result--swordsShield img{
+                    width: 250px;
+                }
+            }
         }
+        //----------------------------Fin Section SECTION----------------------------
         footer{
             grid-area: 8 / 2 / 10 / 10;
 

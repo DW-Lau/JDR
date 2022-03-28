@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Original+Surfer&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JDR - Dices </title>
@@ -30,7 +31,7 @@
             <span class="input--space"></span><!-- barre d'espace entre les options -->
 
             <div class="options cheatMod"> 
-                <label for="cheatMod">CheatMod :</label>
+                <label for="cheatMod">CheatMod </label>
                 <input type="checkbox" name="cheatMod" class="input--cheat cheat">
 
                 <div class="inactivated" data-info="cheatModMenu"> <!-- création options cheatmode -->
@@ -48,18 +49,33 @@
         </div>
     </header>
     <section>
-        <article class="">
-
+        <article class="draw">
+            <div class="draw--number" >
+                <p data-draw="numberDrawNull"> ?</p>
+            </div>
+            <div class="draw--dice">
+                <img src="Assets/Des/DES20.png" alt="Des 20 par défault">
+            </div>
+            <div class="draw--btn">
+                <i class="fa-solid fa-dice"></i>
+            </div>
         </article>
-        <aside div="equal">
-
+        <aside class="equal">
+            <img src="Assets/Accessoires/ruban.png" alt="Ruban égal">
         </aside>
-        <article class="">
-            
+        <article class="result">
+            <div class="result--number" >
+                <p data-draw="numberResultNull"> ?</p>
+            </div>
+            <div class="result--swordsShield">
+                <img src="Assets/Accessoires/swordShields.png" alt="Bouclier et Epées">
+            </div>
         </article>
     </section>
     <footer>
-        <div class="dices"></div>
+        <div class="dices">
+
+        </div>
 
     </footer>
     <!-- <i class="fa-solid fa-dice"></i> -->

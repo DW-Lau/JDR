@@ -43,6 +43,7 @@ body header {
   align-items: flex-start;
 }
 body header h1 {
+  font-family: "MedievalSharp", cursive;
   max-width: 417px;
   text-align: center;
   font-size: 180px;
@@ -117,15 +118,65 @@ body header .header--options .cheatMod .activeOptions .Crit .cheat {
 }
 body section {
   grid-area: 4/2/8/10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
-body section .div3 {
-  grid-area: 4/2/8/5;
+body section .draw, body section .result {
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
-body section .div4 {
-  grid-area: 4/5/8/7;
+body section .draw .draw--number, body section .draw .draw--dice {
+  width: 50%;
 }
-body section .div5 {
-  grid-area: 4/7/8/10;
+body section .draw .draw--number p {
+  font-family: "MedievalSharp", cursive;
+  text-align: center;
+  font-size: 15em;
+  color: #fff;
+  -webkit-text-stroke: 5px #957D03;
+  text-shadow: 5px 4px 25px #000000;
+}
+body section .draw .draw--btn {
+  max-width: 100px;
+  max-height: 60px;
+  text-align: center;
+}
+body section .draw .draw--btn .fa-solid {
+  background-color: #957D03;
+  color: #fff;
+  font-size: 3em;
+  padding: 10px;
+  border: #fff 2px dashed;
+  border-radius: 5px;
+}
+body section .draw .draw--btn:hover .fa-solid {
+  background-color: #5c4d02;
+  font-size: 3.2em;
+}
+body section .equal {
+  width: 15%;
+}
+body section .equal img {
+  max-width: 272px;
+}
+body section .result .result--number, body section .result .result--swordsShield {
+  width: 50%;
+}
+body section .result .result--number p {
+  font-family: "MedievalSharp", cursive;
+  text-align: center;
+  font-size: 15em;
+  color: #fff;
+  -webkit-text-stroke: 5px #957D03;
+  text-shadow: 5px 4px 25px #000000;
+}
+body section .result .result--swordsShield img {
+  width: 250px;
 }
 body footer {
   grid-area: 8/2/10/10;
