@@ -92,15 +92,6 @@ body header .header--options {
           align-items: flex-start;
 }
 
-body header .header--options .cheatMod {
-  max-width: 200px;
-}
-
-body header .header--options .cheatMod .cheat {
-  width: 25px;
-  height: 25px;
-}
-
 body header .header--options label {
   font-size: 2rem;
   font-family: "MedievalSharp";
@@ -127,11 +118,20 @@ body header .header--options .input--space {
   margin: 0 15px;
 }
 
-body header .header--options .inactiveted {
+body header .header--options .cheatMod {
+  max-width: 200px;
+}
+
+body header .header--options .cheatMod .cheat {
+  width: 25px;
+  height: 25px;
+}
+
+body header .header--options .cheatMod .inactivated {
   display: none;
 }
 
-body header .header--options .activeOptions {
+body header .header--options .cheatMod .activeOptions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,7 +147,7 @@ body header .header--options .activeOptions {
           align-items: flex-start;
 }
 
-body header .header--options .activeOptions .Crit {
+body header .header--options .cheatMod .activeOptions .Crit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,15 +165,15 @@ body header .header--options .activeOptions .Crit {
   height: 25px;
 }
 
-body header .header--options .activeOptions .Crit .accent {
+body header .header--options .cheatMod .activeOptions .Crit .accent {
   text-transform: capitalize;
 }
 
-body header .header--options .activeOptions .Crit label {
+body header .header--options .cheatMod .activeOptions .Crit label {
   font-size: 1.1em;
 }
 
-body header .header--options .activeOptions .Crit .cheat {
+body header .header--options .cheatMod .activeOptions .Crit .cheat {
   width: 20px;
   height: 20px;
 }

@@ -53,61 +53,57 @@ body{
                 .header--options { 
                     max-width:765px;
                     margin: 0;
-                    @include aligment(row,space-evenly ,flex-start );
-                    .cheatMod{
-                      max-width: 200px;
-                        .cheat  {//checkbox de l'input cheatbox modifié
-                            width:25px;
-                            height: 25px;
+                    @include aligment(row,space-evenly ,flex-start ); 
+                        label{
+                            font-size: 2rem;
+                            font-family: "MedievalSharp";
                         }
-                    }
-
-                    label{
-                        font-size: 2rem;
-                        font-family: "MedievalSharp";
-                    }
-                    
-                    input{
-                        max-width:100px;
-                        border:1px #fff;
-                        font-size:1.9rem;
-                        color:#fff;
-                        text-align: center;
-                        border-style:none;
-                        border-bottom-style:dotted;
-                        background: transparent;
-                      
-                    }   
-                    
-                    .input--space{
-                        align-self: flex-start;
-                        display: block;
-                        width: 2px;
-                        height: 36px;
-                        background-color: #fff;
-                        margin: 0 15px;
-                    }
-                    .inactiveted{//Style par défault. Changement de menu depuis le JS
-                        display: none;
-                    }
-                    .activeOptions{
-                        @include aligment(column,space-evenly ,flex-start );
-                        .Crit{
-                           @include aligment(row,space-between ,center );
-                           width: 100%; height:25px;
-                           .accent{
-                                text-transform: capitalize;
-                            }
-                            label{
-                                font-size: 1.1em;
-                            } 
+                       input{
+                            max-width:100px;
+                            border:1px #fff;
+                            font-size:1.9rem;
+                            color:#fff;
+                            text-align: center;
+                            border-style:none;
+                            border-bottom-style:dotted;
+                            background: transparent;
+                        }   
+                        .input--space{
+                            align-self: flex-start;
+                            display: block;
+                            width: 2px;
+                            height: 36px;
+                            background-color: #fff;
+                            margin: 0 15px;
+                        }
+                        .cheatMod{
+                            max-width: 200px;
                             .cheat  {//checkbox de l'input cheatbox modifié
-                                width:20px;
-                                height: 20px;
+                                width:25px;
+                                height: 25px;
                             }
-                        }
-                    }
-                }
+                            .inactivated{//Style par défault. Changement de menu depuis le JS
+                                display: none;
+                            }
+                            .activeOptions{
+                                @include aligment(column,space-evenly ,flex-start );
+                                .Crit{
+                                    @include aligment(row,space-between ,center );
+                                    width: 100%; height:25px;
+                                    .accent{
+                                        text-transform: capitalize;
+                                    }
+                                    label{
+                                        font-size: 1.1em;
+                                    } 
+                                    .cheat  {//checkbox de l'input cheatbox modifié
+                                        width:20px;
+                                        height: 20px;
+                                    }
+                                }
+                            }//fin activeOptions
+                        }//fin cheatMod
+                }//fin header--options
         }
         section{
             grid-area: 4 / 2 / 8 / 10;
