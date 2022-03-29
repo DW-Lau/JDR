@@ -280,19 +280,62 @@ body footer {
   grid-area: 8 / 2 / 10 / 10;
 }
 
-body footer .div6 {
-  -ms-grid-row: 8;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 8;
-  grid-area: 8 / 2 / 9 / 10;
+body footer .dices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  width: 100%;
 }
 
-body footer .div7 {
-  -ms-grid-row: 9;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 8;
-  grid-area: 9 / 2 / 10 / 10;
+body footer .dices .btn--dice {
+  border: 2px transparent solid;
+  padding: 15px 5px 5px 5px;
+  width: 14%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body footer .dices .btn--dice img {
+  width: 130px;
+  height: 130px;
+}
+
+body footer .dices .btn--dice .btn--dice-hundred {
+  width: 94%;
+}
+
+body footer .dices .btn--dice p {
+  text-align: center;
+  font-size: 3.5em;
+  color: #fff;
+  -webkit-text-stroke: 2px #967d03;
+  text-shadow: 5px 4px 25px #000000;
+}
+
+body footer .dices .btn--dice:hover {
+  border: 2px dashed;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
 }
 /*# sourceMappingURL=style.css.map */

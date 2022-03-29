@@ -163,7 +163,7 @@ body{
             }
             .result{
                 .result--number,.result--swordsShield{
-                    width: 50%;
+                    width: 50%  ;
                 }
                 .result--number p{
                     font-family:$fontMdvl;
@@ -181,8 +181,34 @@ body{
         //----------------------------Fin Section SECTION----------------------------
         footer{
             grid-area: 8 / 2 / 10 / 10;
-
-            .div6 { grid-area: 8 / 2 / 9 / 10; }
-            .div7 { grid-area: 9 / 2 / 10 / 10; }
+            .dices{
+                @include aligment(row,space-evenly ,baseline );
+                width: 100%;
+                .btn--dice{
+                    border:2px transparent solid;
+                    padding:15px 5px 5px 5px;
+                    width: 14%;
+                    @include aligment(column,space-evenly ,center );
+                    img{
+                        width: 130px;
+                        height:130px;
+                    }
+                     .btn--dice-hundred{
+                            width:94%;
+                        }
+                    p{
+                        text-align: center;
+                        font-size:3.5em;
+                        color: #fff;
+                        -webkit-text-stroke: 2px rgb(150, 125, 3);
+                        text-shadow: 5px 4px 25px #000000;
+                    }
+                }
+                .btn--dice:hover{
+                    border:2px dashed;
+                    border-color: rgba(255, 255, 255, 0.5);
+                    border-radius: 5px;
+                }
+            }
         }
 }
