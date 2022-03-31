@@ -1,3 +1,5 @@
+@import './responsivL';
+
 *{
     margin: 0;
     padding: 0;
@@ -28,6 +30,9 @@ body{
     gap: 20px;
     height: 100vh;
     width: 100%;
+    @include screen-L{
+        background-color: #fff;
+    }
        .bkgd--img{
            position: absolute;
            top: 0;
@@ -44,6 +49,7 @@ body{
            z-index: 15;
        }
         header { 
+            display: grid;
             grid-area: 2 / 2 / 4 / 10;//emplacement du header
             font-family:$fontMdvl;
             height: 186px;
@@ -115,6 +121,7 @@ body{
         }
         //----------------------------Fin Section HEADER----------------------------
         section{
+            display: grid;
             grid-area: 4 / 2 / 8 / 10;
             @include aligment(row,space-evenly,center );
             .draw ,.result{
@@ -180,6 +187,7 @@ body{
         }
         //----------------------------Fin Section SECTION----------------------------
         footer{
+            display: grid;
             grid-area: 8 / 2 / 10 / 10;
             .dices{
                 @include aligment(row,space-evenly ,baseline );

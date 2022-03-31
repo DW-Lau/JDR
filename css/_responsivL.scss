@@ -1,0 +1,11 @@
+//BPL= BreakPointLarge - Medium - Small
+$mediaBPL: 1440px;
+$mediaBPM: 726px;
+$mediaBPS: 320px;
+
+@mixin screen-L {
+    @media screen and (min-width:#{$mediaBPL}) {
+    @content
+    }
+}
+

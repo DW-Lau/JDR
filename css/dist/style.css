@@ -18,6 +18,11 @@ body {
   height: 100vh;
   width: 100%;
 }
+@media screen and (min-width: 1440px) {
+  body {
+    background-color: #fff;
+  }
+}
 body .bkgd--img {
   position: absolute;
   top: 0;
@@ -34,6 +39,7 @@ body header, body section, body footer {
   z-index: 15;
 }
 body header {
+  display: grid;
   grid-area: 2/2/4/10;
   font-family: "MedievalSharp", cursive;
   height: 186px;
@@ -117,6 +123,7 @@ body header .header--options .cheatMod .activeOptions .Crit .cheat {
   height: 20px;
 }
 body section {
+  display: grid;
   grid-area: 4/2/8/10;
   display: flex;
   flex-direction: row;
@@ -179,6 +186,7 @@ body section .result .result--swordsShield img {
   width: 250px;
 }
 body footer {
+  display: grid;
   grid-area: 8/2/10/10;
 }
 body footer .dices {
