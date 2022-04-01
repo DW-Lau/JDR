@@ -25,11 +25,12 @@ function getDice(){//récupérer la valeur du data et convertie en nombre
     return convFace;
 }
 function drawDices(){//lancer de des
+       //Réiniitalisation après le 1er lancer//
+    displayBasicResult.innerHTML="?"
+    displayBasicResult.style.webkitTextStrokeColor="#957D03";
+  //------------------------------------//  
     if(convFace!==undefined){//vérification d'une valeur
-      randomThrow(min,convFace);
-       
-    }else{
-        console.log("Aucun dès séléctionné");
+      randomThrow(min,convFace);  
     }
 }
 
@@ -39,27 +40,40 @@ function randomThrow(min,convFace){
   let basicResult=Math.floor(Math.random()*(convFace-min)+min);
   displayBasicResult.innerHTML=basicResult;//afiche le résultat du des
 //--------RECUPERATION DES  OPTIONS--------//
-      let bonusCheck=document.querySelector('.input--bonus').value;
-        let bonus=parseInt(bonusCheck);
+      let bonusCheck=document.querySelector('.input--bonus').value;  
       let malusCheck=document.querySelector('.input--malus').value;
-        let malus=parseInt(malusCheck);
+        
 //--------FIN RECUPERATION DES OPTIONS--------//
-
+  critics(basicResult,convFace);
   checkOptions(bonusCheck,malusCheck,basicResult);
+  
 }
-function checkOptions(bonus,malus,basicResult){
+function checkOptions(bonusCheck,malusCheck,basicResult){
+
+  let bonus=parseInt(bonusCheck);
+  let malus=parseInt(malusCheck);
   if(bonus|| malus !==0){
     let optionsResult;
       if (bonus>0){
         optionsResult=basicResult+bonus;
         displayAddResult.innerHTML=optionsResult;//affiche le résultat après calcul des options
+        bonusCheck.value="0";
       } 
       else if(malus>0){
          optionsResult=basicResult-malus;
         displayAddResult.innerHTML=optionsResult;//affiche le résultat après calcul des options
+        malusCheck.innerHTML="0";
       }
-  }
-  else{
+  } else{
      displayAddResult.innerHTML=basicResult;
   }
+}
+function critics(basicResult,convFace){
+  let succes=convFace-1;
+  if(basicResult==convFace || basicResult==succes){
+    displayBasicResult.style.webkitTextStrokeColor="green";
+  }else if(basicResult==1){
+    displayBasicResult.style.webkitTextStrokeColor="red";
+  }
+
 }
