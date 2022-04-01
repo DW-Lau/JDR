@@ -19,14 +19,14 @@
         <div class="header--options">
             <span class="options Bonus"></span>
                 <label for="bonus">Bonus :</label>
-                <input type="text" name="bonus" class="input--bonus">
+                <input type="number" name="bonus" class="input--bonus" value="0" min="0">
             </span>
             
             <span class="input--space"></span><!-- barre d'espace entre les options -->
 
             <span class="options Malus" >
                 <label for="malus">Malus :</label>
-                <input type="text" name="malus" class="input--malus">
+                <input type="number" name="malus" class="input--malus" value="0" min="0">
             </span>
             <span class="input--space"></span><!-- barre d'espace entre les options -->
 
@@ -51,7 +51,7 @@
     <section>
         <article class="draw">
             <div class="draw--number" >
-                <p data-draw="numberDrawNull"> ?</p>
+                <p class="numberDrawNull"> ?</p>
             </div>
             <div class="draw--dice">
                 <img src="Assets/Des/DES20.png" class="draw--display" alt="Des 20 par défault">
@@ -65,7 +65,7 @@
         </aside>
         <article class="result">
             <div class="result--number" >
-                <p data-draw="numberResultNull"> ?</p>
+                <p class="numberResultNull"> ?</p>
             </div>
             <div class="result--swordsShield">
                 <img src="Assets/Accessoires/swordShields.png" alt="Bouclier et Epées">
