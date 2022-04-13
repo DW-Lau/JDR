@@ -5,7 +5,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   * {
     padding: 0;
     margin: 0;
@@ -18,18 +18,12 @@ h1, p, label, input {
 }
 
 body {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   height: 100vh;
   width: 100%;
-}
-
-@media screen and (max-width: 1441px) {
-  body {
-    gap: 5px;
-  }
 }
 
 body .bkgd--img {
@@ -41,7 +35,7 @@ body .bkgd--img {
   height: 100%;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   body .bkgd--img {
     max-width: 1440px;
   }
@@ -52,21 +46,20 @@ body .bkgd--img img {
   height: 100%;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   body .bkgd--img img {
     max-width: 1440px;
   }
 }
 
 body header, body section, body footer {
+  width: 80%;
   z-index: 15;
 }
 
 body header {
-  display: grid;
-  grid-area: 2 / 2 / 4 / 10;
   font-family: "MedievalSharp", cursive;
-  height: 186px;
+  height: 15%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -84,11 +77,11 @@ body header h1 {
   -webkit-text-stroke: 1px #242424;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   body header h1 {
     font-size: 150px;
     line-height: 130px;
-    -webkit-text-stroke: 5px #242424;
+    -webkit-text-stroke: 2px #242424;
   }
 }
 
@@ -106,12 +99,6 @@ body header .header--options label {
   font-family: "MedievalSharp";
 }
 
-@media screen and (max-width: 1441px) {
-  body header .header--options label {
-    font-size: 1.8rem;
-  }
-}
-
 body header .header--options input {
   max-width: 100px;
   border: 1px #fff;
@@ -123,7 +110,7 @@ body header .header--options input {
   background: transparent;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   body header .header--options input {
     font-size: 1.5rem;
   }
@@ -147,7 +134,7 @@ body header .header--options .cheatMod .cheat {
   height: 25px;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   body header .header--options .cheatMod .cheat {
     height: 20px;
     width: 20px;
@@ -187,9 +174,32 @@ body header .header--options .cheatMod .activeOptions .Crit .cheat {
   height: 20px;
 }
 
+@media screen and (max-width: 1440px) {
+  body header .header--options label {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body header h1 {
+    width: 25%;
+    font-size: 100px;
+    line-height: 80px;
+  }
+  body header .header--options {
+    width: 60%;
+  }
+  body header .header--options label {
+    font-size: 1.2rem;
+  }
+  body header .header--options input {
+    max-width: 50px;
+    font-size: 1.2rem;
+  }
+}
+
 body section {
-  display: grid;
-  grid-area: 4 / 2 / 8 / 10;
+  height: 40%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -209,7 +219,13 @@ body section .draw .draw--number, body section .draw .draw--dice {
 }
 
 body section .draw .draw--display {
-  width: 247px;
+  max-width: 200px;
+}
+
+@media screen and (max-width: 1024px) {
+  body section .draw .draw--display {
+    width: 145px;
+  }
 }
 
 body section .draw .draw--number p {
@@ -240,7 +256,7 @@ body section .draw .draw--btn:hover .fa-solid {
   font-size: 3.2em;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   body section .draw .draw--number p {
     font-size: 12rem;
   }
@@ -261,14 +277,14 @@ body section .draw .draw--btn:hover .fa-solid {
 }
 
 body section .equal {
-  width: 20%;
+  max-width: 15%;
 }
 
 body section .equal img {
   max-width: 272px;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   body section .equal {
     width: 17%;
     margin: 2%;
@@ -294,15 +310,23 @@ body section .result .result--swordsShield img {
   width: 247px;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1024px) {
+  body section .result .result--number p {
+    font-size: 10em;
+  }
+  body section .result .result--swordsShield img {
+    width: 145px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
   body section .result .result--number p {
     font-size: 12rem;
   }
 }
 
 body footer {
-  display: grid;
-  grid-area: 8 / 2 / 10 / 10;
+  height: 20%;
 }
 
 body footer .dices {
@@ -323,7 +347,7 @@ body footer .dices .btn--dice {
   align-items: center;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   body footer .dices .btn--dice {
     padding: 15px 0 5px 0;
   }
@@ -350,5 +374,37 @@ body footer .dices .btn--dice:hover {
   border: 2px dashed;
   border-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  body footer {
+    height: 25%;
+  }
+  body footer .dices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  body footer .dices .btn--dice {
+    padding: 0px;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  body footer .dices .btn--dice img {
+    width: 95px;
+    height: 95px;
+  }
+  body footer .dices .btn--dice .btn--dice-hundred {
+    width: 100%;
+  }
+  body footer .dices .btn--dice p {
+    font-size: 2.5em;
+    -webkit-text-stroke: 1px #967d03;
+    text-shadow: 5px 4px 15px #000000;
+  }
 }
 /*# sourceMappingURL=style.css.map */

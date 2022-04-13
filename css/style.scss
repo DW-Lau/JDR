@@ -27,17 +27,9 @@ h1,p,label,input{
     color:#fff;font-family: 'Original Surfer', cursive;
 }
 body{
-    
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    gap: 20px;
+    @include aligment(column,space-evenly ,center );
     height: 100vh;
     width: 100%;
-    @include screen-L{
-        //background-color: #000000;
-        gap: 5px;
-    }
        .bkgd--img{
            position: absolute;
            top: 0;
@@ -58,13 +50,12 @@ body{
            }
        }
        header, section, footer{
+           width: 80%;
            z-index: 15;
        }
         header { 
-            display: grid;
-            grid-area: 2 / 2 / 4 / 10;//emplacement du header
             font-family:$fontMdvl;
-            height: 186px;
+            height: 15%;
             @include aligment(row,space-between ,flex-start );//flexbox pour les élements à l'intérieur
                 h1{
                     font-family:$fontMdvl;
@@ -78,7 +69,7 @@ body{
                     @include screen-L{
                         font-size: 150px;
                         line-height: 130px;
-                        -webkit-text-stroke: 5px #242424;
+                        -webkit-text-stroke: 2px #242424;
                     }
                 }
                 .header--options { 
@@ -88,9 +79,7 @@ body{
                         label{
                             font-size: 2rem;
                             font-family: "MedievalSharp";
-                            @include screen-L{
-                                font-size: 1.8rem;
-                            }
+                        
                         }
                        input{
                             max-width:100px;
@@ -145,11 +134,35 @@ body{
                             }//fin activeOptions
                         }//fin cheatMod
                 }//fin header--options
+                @include screen-L{
+                    .header--options{
+                        label{
+                            font-size: 1.8rem;
+                        }
+                    }
+                    
+                }
+                @include laptop{
+                    h1{
+                        width:25%;
+                        font-size: 100px;
+                        line-height: 80px;
+                       
+                    }
+                    .header--options{width: 60%;
+                        label{
+                            font-size: 1.2rem;
+                        }
+                        input{
+                            max-width:50px;
+                            font-size:1.2rem;
+                        }
+                    }
+                }
         }
         //----------------------------Fin Section HEADER----------------------------
         section{
-            display: grid;
-            grid-area: 4 / 2 / 8 / 10;
+            height: 40%;
             @include aligment(row,space-evenly,baseline );
             .draw ,.result{
                 width: 40%;
@@ -161,7 +174,12 @@ body{
                     width: 50%;
                 }
                 .draw--display{
-                   width: 247px;
+                   max-width: 200px;
+                }
+                @include laptop{
+                    .draw--display{
+                        width: 145px;
+                    }
                 }
                 .draw--number p{
                     text-align: center;
@@ -214,7 +232,7 @@ body{
                 }//FIN SCREEN L
             }//Fin DRAW
             .equal { 
-                width: 20%;
+                max-width: 15%;
                 img{
                      max-width:272px;
                 }
@@ -240,6 +258,14 @@ body{
                 .result--swordsShield img{
                     width: 247px;
                 }
+                @include laptop{
+                    .result--number p{
+                        font-size:10em;
+                    }
+                    .result--swordsShield img{
+                        width: 145px;
+                    }
+                }
 
                 @include screen-L{
                    .result--number  p{
@@ -250,8 +276,7 @@ body{
         }
         //----------------------------Fin Section SECTION----------------------------
         footer{
-            display: grid;
-            grid-area: 8 / 2 / 10 / 10;
+            height: 20%;
             .dices{
                 @include aligment(row,space-evenly ,baseline );
                 width: 100%;
@@ -282,6 +307,29 @@ body{
                     border:2px dashed;
                     border-color: rgba(255, 255, 255, 0.5);
                     border-radius: 5px;
+                }
+            }
+            @include laptop{
+                height: 25%;
+                .dices{
+                    @include flexAlign(wrap,space-evenly ,center );
+                    .btn--dice{
+                        padding:0px;
+                         width: 22%;
+                        @include aligment(column,space-evenly ,center );
+                        img{
+                            width: 95px;
+                            height:95px;
+                        }
+                         .btn--dice-hundred{
+                                width:100%;
+                            }
+                        p{
+                            font-size:2.5em;
+                            -webkit-text-stroke: 1px rgb(150, 125, 3);
+                            text-shadow: 5px 4px 15px #000000;
+                        }
+                    }
                 }
             }
         }
