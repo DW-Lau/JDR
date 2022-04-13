@@ -1,14 +1,14 @@
 //BPL= BreakPointLarge - Medium - Small
-$mediaBPL: 1441px;
-$mediaBPM: 726px;
-$mediaBPS: 320px;
+$mediaBPL: 1440px;
+$mediaBPM: 1024px;
+$mediaBPS: 768px;
 
 @mixin screen-L {
     @media screen and (max-width:#{$mediaBPL}) {
     @content
     }
 }
-@mixin screen-M {
+@mixin laptop {
     @media screen and (max-width:#{$mediaBPM}){
         @content
     }
