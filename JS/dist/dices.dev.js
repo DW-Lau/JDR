@@ -1,5 +1,7 @@
 "use strict";
 
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 var btnDice = document.querySelectorAll('.btn--dice'); //récupération de TOUS les boutons de Des
 
 var displayDice = document.querySelector('.draw--display'); //récupération de l'image du dés par défault;
@@ -9,6 +11,8 @@ var displayBasicResult = document.querySelector('.numberDrawNull'); //récupére
 var displayAddResult = document.querySelector('.numberResultNull'); //récupère le ? par défault à droite, celui-ci sera le résultat après calcul des options
 
 var btnDraw = document.querySelector(".draw--btn");
+var checkCheatOptions; //nom de la classe donnée par l'activation du menu "cheatmod" dans le fichier OptionsMenu.js
+
 var convFace; //servira à convertir la valeur récupérer du des en nombre
 
 var min = 1;
@@ -66,10 +70,15 @@ function randomThrow(min, convFace) {
   //--------RECUPERATION DES  OPTIONS--------//
 
   var bonusCheck = document.querySelector('.input--bonus').value;
-  var malusCheck = document.querySelector('.input--malus').value; //--------FIN RECUPERATION DES OPTIONS--------//
+  var malusCheck = document.querySelector('.input--malus').value;
+  var cheatSucces = document.querySelector('.activeSucces');
+  console.log(_typeof(cheatSucces));
+  var cheatFail = document.querySelector('.activeFail'); //--------FIN RECUPERATION DES OPTIONS--------//
 
-  critics(basicResult, convFace);
-  checkOptions(bonusCheck, malusCheck, basicResult);
+  critics(basicResult, convFace); //Vérifie si un Critique (succes ou fail) a été réalisé
+
+  checkOptions(bonusCheck, malusCheck, basicResult); //Vérifie si une option a été ajouté
+  //checkCheats(checkCheatOptions,cheatSucces,cheatFail,convFace);//vérifie si le mode Triche est actif
 }
 
 function checkOptions(bonusCheck, malusCheck, basicResult) {
@@ -103,4 +112,17 @@ function critics(basicResult, convFace) {
   } else if (basicResult == 1) {
     displayBasicResult.style.webkitTextStrokeColor = "red";
   }
-}
+} // function checkCheats(checkCheatOptions,cheatSucces,cheatFail,convFace){
+//   checkCheatOptions=document.querySelector(".activeOptions");
+// console.log(convFace)
+//   if(checkCheatOptions!=null){
+//       console.log(cheatSucces)
+//       if(cheatSucces!=undefined){
+//         displayBasicResult.innerHTML=convFace;
+//       }else if(cheatFail!=undefined){
+//         displayBasicResult.innerHTML="1";
+//       }
+//   }else{
+//     console.log("pas de triche détecté")
+//   }
+//};

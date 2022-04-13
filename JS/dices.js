@@ -7,7 +7,7 @@ let displayAddResult=document.querySelector('.numberResultNull');//récupère le
 let btnDraw=document.querySelector(".draw--btn");
 
 
-
+let checkCheatOptions;//nom de la classe donnée par l'activation du menu "cheatmod" dans le fichier OptionsMenu.js
 
 let convFace;//servira à convertir la valeur récupérer du des en nombre
 const min=1;
@@ -34,7 +34,6 @@ function drawDices(){//lancer de des
     }
 }
 
-
 //
 function randomThrow(min,convFace){
   let basicResult=Math.floor(Math.random()*(convFace-min)+min);
@@ -42,14 +41,19 @@ function randomThrow(min,convFace){
 //--------RECUPERATION DES  OPTIONS--------//
       let bonusCheck=document.querySelector('.input--bonus').value;  
       let malusCheck=document.querySelector('.input--malus').value;
-        
-//--------FIN RECUPERATION DES OPTIONS--------//
-  critics(basicResult,convFace);
-  checkOptions(bonusCheck,malusCheck,basicResult);
-  
-}
-function checkOptions(bonusCheck,malusCheck,basicResult){
 
+      let cheatSucces=document.querySelector('.activeSucces');  
+      console.log(typeof(cheatSucces));
+      let cheatFail=document.querySelector('.activeFail');
+//--------FIN RECUPERATION DES OPTIONS--------//
+  
+  critics(basicResult,convFace);//Vérifie si un Critique (succes ou fail) a été réalisé
+  checkOptions(bonusCheck,malusCheck,basicResult);//Vérifie si une option a été ajouté
+  //checkCheats(checkCheatOptions,cheatSucces,cheatFail,convFace);//vérifie si le mode Triche est actif
+}
+
+
+function checkOptions(bonusCheck,malusCheck,basicResult){
   let bonus=parseInt(bonusCheck);
   let malus=parseInt(malusCheck);
   if(bonus|| malus !==0){
@@ -77,3 +81,19 @@ function critics(basicResult,convFace){
   }
 
 }
+// function checkCheats(checkCheatOptions,cheatSucces,cheatFail,convFace){
+//   checkCheatOptions=document.querySelector(".activeOptions");
+     
+// console.log(convFace)
+//   if(checkCheatOptions!=null){
+//       console.log(cheatSucces)
+//       if(cheatSucces!=undefined){
+//         displayBasicResult.innerHTML=convFace;
+//       }else if(cheatFail!=undefined){
+//         displayBasicResult.innerHTML="1";
+//       }
+//   }else{
+//     console.log("pas de triche détecté")
+//   }
+ 
+//};
