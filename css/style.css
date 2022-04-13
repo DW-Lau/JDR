@@ -5,6 +5,13 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 1441px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+}
+
 h1, p, label, input {
   color: #fff;
   font-family: 'Original Surfer', cursive;
@@ -19,9 +26,9 @@ body {
   width: 100%;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 1441px) {
   body {
-    background-color: #fff;
+    gap: 5px;
   }
 }
 
@@ -34,9 +41,21 @@ body .bkgd--img {
   height: 100%;
 }
 
+@media screen and (max-width: 1441px) {
+  body .bkgd--img {
+    max-width: 1440px;
+  }
+}
+
 body .bkgd--img img {
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width: 1441px) {
+  body .bkgd--img img {
+    max-width: 1440px;
+  }
 }
 
 body header, body section, body footer {
@@ -65,6 +84,14 @@ body header h1 {
   -webkit-text-stroke: 1px #242424;
 }
 
+@media screen and (max-width: 1441px) {
+  body header h1 {
+    font-size: 150px;
+    line-height: 130px;
+    -webkit-text-stroke: 5px #242424;
+  }
+}
+
 body header .header--options {
   max-width: 765px;
   margin: 0;
@@ -79,6 +106,12 @@ body header .header--options label {
   font-family: "MedievalSharp";
 }
 
+@media screen and (max-width: 1441px) {
+  body header .header--options label {
+    font-size: 1.8rem;
+  }
+}
+
 body header .header--options input {
   max-width: 100px;
   border: 1px #fff;
@@ -88,6 +121,12 @@ body header .header--options input {
   border-style: none;
   border-bottom-style: dotted;
   background: transparent;
+}
+
+@media screen and (max-width: 1441px) {
+  body header .header--options input {
+    font-size: 1.5rem;
+  }
 }
 
 body header .header--options .input--space {
@@ -106,6 +145,13 @@ body header .header--options .cheatMod {
 body header .header--options .cheatMod .cheat {
   width: 25px;
   height: 25px;
+}
+
+@media screen and (max-width: 1441px) {
+  body header .header--options .cheatMod .cheat {
+    height: 20px;
+    width: 20px;
+  }
 }
 
 body header .header--options .cheatMod .inactivated {
@@ -147,7 +193,7 @@ body section {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: baseline;
 }
 
 body section .draw, body section .result {
@@ -162,8 +208,11 @@ body section .draw .draw--number, body section .draw .draw--dice {
   width: 50%;
 }
 
+body section .draw .draw--display {
+  width: 247px;
+}
+
 body section .draw .draw--number p {
-  font-family: "MedievalSharp", cursive;
   text-align: center;
   font-size: 15em;
   color: #fff;
@@ -191,12 +240,42 @@ body section .draw .draw--btn:hover .fa-solid {
   font-size: 3.2em;
 }
 
+@media screen and (max-width: 1441px) {
+  body section .draw .draw--number p {
+    font-size: 12rem;
+  }
+  body section .draw .draw--dice {
+    width: 41%;
+  }
+  body section .draw .draw--btn {
+    max-width: 80px;
+    max-height: 40px;
+  }
+  body section .draw .draw--btn .fa-solid {
+    font-size: 2.8em;
+    padding: 8px;
+  }
+  body section .draw .draw--btn:hover .fa-solid {
+    font-size: 3em;
+  }
+}
+
 body section .equal {
-  width: 15%;
+  width: 20%;
 }
 
 body section .equal img {
   max-width: 272px;
+}
+
+@media screen and (max-width: 1441px) {
+  body section .equal {
+    width: 17%;
+    margin: 2%;
+  }
+  body section .equal img {
+    width: 100%;
+  }
 }
 
 body section .result .result--number, body section .result .result--swordsShield {
@@ -204,7 +283,6 @@ body section .result .result--number, body section .result .result--swordsShield
 }
 
 body section .result .result--number p {
-  font-family: "MedievalSharp", cursive;
   text-align: center;
   font-size: 15em;
   color: #fff;
@@ -213,7 +291,13 @@ body section .result .result--number p {
 }
 
 body section .result .result--swordsShield img {
-  width: 250px;
+  width: 247px;
+}
+
+@media screen and (max-width: 1441px) {
+  body section .result .result--number p {
+    font-size: 12rem;
+  }
 }
 
 body footer {
@@ -237,6 +321,12 @@ body footer .dices .btn--dice {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+@media screen and (max-width: 1441px) {
+  body footer .dices .btn--dice {
+    padding: 15px 0 5px 0;
+  }
 }
 
 body footer .dices .btn--dice img {

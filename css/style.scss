@@ -5,6 +5,10 @@
     padding: 0;
     box-sizing: border-box;
     cursor: pointer;
+    @include screen-L{
+        padding: 0;
+        margin: 0;
+    }
 }
 @mixin aligment($direction,$justify,$align) {
     display: flex;
@@ -31,7 +35,8 @@ body{
     height: 100vh;
     width: 100%;
     @include screen-L{
-        background-color: #fff;
+        //background-color: #000000;
+        gap: 5px;
     }
        .bkgd--img{
            position: absolute;
@@ -40,9 +45,16 @@ body{
            z-index: 0;
            width: 100%;
            height: 100%;
+           @include screen-L{
+               max-width: 1440px;
+           }
+
            img{
                width: 100%;
                height: 100%;
+               @include screen-L{
+                   max-width:1440px ;
+               }
            }
        }
        header, section, footer{
@@ -63,6 +75,11 @@ body{
                     color:rgb(211, 178, 0);
                     opacity: 0.5;
                     -webkit-text-stroke: 1px #242424;
+                    @include screen-L{
+                        font-size: 150px;
+                        line-height: 130px;
+                        -webkit-text-stroke: 5px #242424;
+                    }
                 }
                 .header--options { 
                     max-width:765px;
@@ -71,6 +88,9 @@ body{
                         label{
                             font-size: 2rem;
                             font-family: "MedievalSharp";
+                            @include screen-L{
+                                font-size: 1.8rem;
+                            }
                         }
                        input{
                             max-width:100px;
@@ -81,6 +101,9 @@ body{
                             border-style:none;
                             border-bottom-style:dotted;
                             background: transparent;
+                            @include screen-L{
+                                font-size: 1.5rem;
+                            }
                         }   
                         .input--space{
                             align-self: flex-start;
@@ -95,6 +118,10 @@ body{
                             .cheat  {//checkbox de l'input cheatbox modifié
                                 width:25px;
                                 height: 25px;
+                                @include screen-L{
+                                    height: 20px;
+                                    width: 20px;
+                                }
                             }
                             .inactivated{//Style par défault. Changement de menu depuis le JS
                                 display: none;
@@ -123,17 +150,20 @@ body{
         section{
             display: grid;
             grid-area: 4 / 2 / 8 / 10;
-            @include aligment(row,space-evenly,center );
+            @include aligment(row,space-evenly,baseline );
             .draw ,.result{
                 width: 40%;
                 @include flexAlign(wrap,space-around,center);
-                }
+            }
+
             .draw{
                 .draw--number,.draw--dice{
                     width: 50%;
                 }
+                .draw--display{
+                   width: 247px;
+                }
                 .draw--number p{
-                    font-family:$fontMdvl;
                     text-align: center;
                     font-size:15em;
                     color: #fff;
@@ -161,11 +191,39 @@ body{
                         font-size: 3.2em;
                     }
                 }
+                @include screen-L{
+                    .draw--number p{
+                        font-size: 12rem;
+                    }
+                    .draw--dice{
+                        width: 41%;
+                    }
+                    .draw--btn{
+                        max-width: 80px;
+                        max-height: 40px;
+                        .fa-solid{ 
+                            font-size:2.8em ;
+                            padding:8px;
+                        }
+                    }
+                    .draw--btn:hover{
+                        .fa-solid{
+                            font-size: 3em;
+                        }
+                    }
+                }//FIN SCREEN L
             }//Fin DRAW
             .equal { 
-                width: 15%;
+                width: 20%;
                 img{
                      max-width:272px;
+                }
+                @include screen-L{
+                    width: 17%;
+                    margin:2%;
+                    img{
+                        width: 100%;
+                    }
                 }
             }
             .result{
@@ -173,7 +231,6 @@ body{
                     width: 50%  ;
                 }
                 .result--number p{
-                    font-family:$fontMdvl;
                     text-align: center;
                     font-size:15em;
                     color: #fff;
@@ -181,7 +238,13 @@ body{
                     text-shadow: 5px 4px 25px #000000;
                 }
                 .result--swordsShield img{
-                    width: 250px;
+                    width: 247px;
+                }
+
+                @include screen-L{
+                   .result--number  p{
+                       font-size: 12rem;
+                   }
                 }
             }
         }
@@ -197,6 +260,9 @@ body{
                     padding:15px 5px 5px 5px;
                     width: 14%;
                     @include aligment(column,space-evenly ,center );
+                    @include screen-L{
+                        padding: 15px 0 5px 0;
+                    }
                     img{
                         width: 130px;
                         height:130px;
