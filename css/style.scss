@@ -30,6 +30,9 @@ body{
     @include aligment(column,space-evenly ,center );
     height: 100vh;
     width: 100%;
+    @include smartphone{
+        @include flexAlign(wrap,center ,center );
+    }//modification flex pour la version mobile
        .bkgd--img{
            position: absolute;
            top: 0;
@@ -40,13 +43,12 @@ body{
            @include screen-L{
                max-width: 1440px;
            }
-
            img{
                width: 100%;
                height: 100%;
-               @include screen-L{
-                   max-width:1440px ;
-               }
+                @include screen-L{
+                    max-width:1440px ;
+                }
            }
        }
        header, section, footer{
@@ -71,6 +73,12 @@ body{
                         line-height: 130px;
                         -webkit-text-stroke: 2px #242424;
                     }
+                    @include tab{
+                        opacity: 0.75;
+                        font-size: 100px;
+                        line-height: 80px;
+                        -webkit-text-stroke: 1px #242424;
+                    } 
                 }
                 .header--options { 
                     max-width:765px;
@@ -141,7 +149,7 @@ body{
                         }
                     }
                     
-                }
+                }//FIN MEDIA SCREEN L
                 @include laptop{
                     h1{
                         width:25%;
@@ -149,7 +157,8 @@ body{
                         line-height: 80px;
                        
                     }
-                    .header--options{width: 60%;
+                    .header--options{
+                        width: 60%;
                         label{
                             font-size: 1.2rem;
                         }
@@ -158,7 +167,53 @@ body{
                             font-size:1.2rem;
                         }
                     }
-                }
+                }//FIN MEDIA LAPTOP
+                @include tab{
+                    .header--options{
+                        label{
+                            font-size: 1.2rem;
+                        }
+                        input{
+                            max-width:40px;
+                            font-size:1rem;
+                        }
+                        .input--space{
+                            display: none;
+                        }
+                    }
+
+                }//FIN MEDIA TAB
+                @include smartphone {
+                    width: 100%;
+                    height: 15%;
+                    h1{
+                        margin-left: 5%;
+                        font-size: 50px;
+                    }
+                    .header--options{
+                        width: 60%;
+                        @include aligment(column, space-evenly ,center );
+                        label{
+                            font-size: 1rem;
+                        }
+                        input{
+                            max-width:40px;
+                            font-size:1rem;
+                        }
+                        .input--space{
+                            display: none;
+                        }
+                        .cheatMod{
+                            .cheat{
+                            width: 15px;
+                            height: 15px;
+                        }
+                        }
+                        .activeOptions{
+                            font-size: 0.8em;
+                        }
+                    }
+                }//FIN MEDIA SMARTPHONE
         }
         //----------------------------Fin Section HEADER----------------------------
         section{
@@ -168,7 +223,6 @@ body{
                 width: 40%;
                 @include flexAlign(wrap,space-around,center);
             }
-
             .draw{
                 .draw--number,.draw--dice{
                     width: 50%;
@@ -230,7 +284,31 @@ body{
                         }
                     }
                 }//FIN SCREEN L
+
+               
             }//Fin DRAW
+            @include tab{
+                @include aligment(column,space-evenly ,center );
+           
+                .draw ,.result{
+                    width: 100%;
+                    @include aligment(row,space-evenly ,center );
+                        .draw--number,.draw--dice,.draw--btn{
+                            max-width: 33%;
+                        }
+                        .draw--number p{
+                            font-size: 8em;
+                        }
+                        .draw--display{
+                            max-width: 50%;
+                        }
+                }
+               
+            }//FIN MEDIA TAB
+            @include smartphone{
+                height: 75%;
+                width:70%;
+            }//FIN MEDIA SMARTPHONE
             .equal { 
                 max-width: 15%;
                 img{
@@ -271,6 +349,11 @@ body{
                    .result--number  p{
                        font-size: 12rem;
                    }
+                }
+                @include tab{
+                    .result--number p{
+                        font-size: 8em;
+                    }
                 }
             }
         }
@@ -316,6 +399,29 @@ body{
                     .btn--dice{
                         padding:0px;
                          width: 22%;
+                        @include aligment(column,space-evenly ,center );
+                        img{
+                            width: 95px;
+                            height:95px;
+                        }
+                         .btn--dice-hundred{
+                                width:100%;
+                            }
+                        p{
+                            font-size:2.5em;
+                            -webkit-text-stroke: 1px rgb(150, 125, 3);
+                            text-shadow: 5px 4px 15px #000000;
+                        }
+                    }
+                }
+            }
+            @include smartphone{
+                width: 25%;
+                @include aligment(column,space-evenly ,center );
+                .dices{
+                    
+                    .btn--dice{
+                        padding:0px;
                         @include aligment(column,space-evenly ,center );
                         img{
                             width: 95px;
