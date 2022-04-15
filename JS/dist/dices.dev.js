@@ -1,7 +1,5 @@
 "use strict";
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 var btnDice = document.querySelectorAll('.btn--dice'); //récupération de TOUS les boutons de Des
 
 var displayDice = document.querySelector('.draw--display'); //récupération de l'image du dés par défault;
@@ -10,12 +8,18 @@ var displayBasicResult = document.querySelector('.numberDrawNull'); //récupére
 
 var displayAddResult = document.querySelector('.numberResultNull'); //récupère le ? par défault à droite, celui-ci sera le résultat après calcul des options
 
-var btnDraw = document.querySelector(".draw--btn");
+var btnDraw = document.querySelector(".draw--btn"); //récupération du bouton de lancer
+
 var checkCheatOptions; //nom de la classe donnée par l'activation du menu "cheatmod" dans le fichier OptionsMenu.js
+
+var succesPriority = 0; //Création de valeur pour l'option cheatMod
+
+var failPriority = 0; //Création de valeur pour l'option cheatMod
 
 var convFace; //servira à convertir la valeur récupérer du des en nombre
 
-var min = 1;
+var min = 1; //-------------------------------EVENTS-------------------------------//
+
 var _iteratorNormalCompletion = true;
 var _didIteratorError = false;
 var _iteratorError = undefined;
@@ -41,7 +45,7 @@ try {
   }
 }
 
-btnDraw.addEventListener("click", drawDices);
+btnDraw.addEventListener("click", drawDices); //-------------------------------FONCTIONS-------------------------------//
 
 function getDice() {
   //récupérer la valeur du data et convertie en nombre 
@@ -61,8 +65,7 @@ function drawDices() {
     //vérification d'une valeur
     randomThrow(min, convFace);
   }
-} //
-
+}
 
 function randomThrow(min, convFace) {
   var basicResult = Math.floor(Math.random() * (convFace - min) + min);
@@ -72,13 +75,17 @@ function randomThrow(min, convFace) {
   var bonusCheck = document.querySelector('.input--bonus').value;
   var malusCheck = document.querySelector('.input--malus').value;
   var cheatSucces = document.querySelector('.activeSucces');
-  console.log(_typeof(cheatSucces));
   var cheatFail = document.querySelector('.activeFail'); //--------FIN RECUPERATION DES OPTIONS--------//
 
-  critics(basicResult, convFace); //Vérifie si un Critique (succes ou fail) a été réalisé
+  checkCheats(checkCheatOptions, cheatSucces, cheatFail, convFace); //vérifie si le mode Triche est actif---- Si il est actif, renvoit des valeurs pour éviter les autres étapes
 
-  checkOptions(bonusCheck, malusCheck, basicResult); //Vérifie si une option a été ajouté
-  //checkCheats(checkCheatOptions,cheatSucces,cheatFail,convFace);//vérifie si le mode Triche est actif
+  if (succesPriority == 5 || failPriority == 1) {
+    console.log("Retour basique");
+  } else {
+    critics(basicResult, convFace); //Vérifie si un Critique (succes ou fail) a été réalisé
+
+    checkOptions(bonusCheck, malusCheck, basicResult); //Vérifie si une option a été ajouté
+  }
 }
 
 function checkOptions(bonusCheck, malusCheck, basicResult) {
@@ -91,13 +98,9 @@ function checkOptions(bonusCheck, malusCheck, basicResult) {
     if (bonus > 0) {
       optionsResult = basicResult + bonus;
       displayAddResult.innerHTML = optionsResult; //affiche le résultat après calcul des options
-
-      bonusCheck.value = "0";
     } else if (malus > 0) {
       optionsResult = basicResult - malus;
       displayAddResult.innerHTML = optionsResult; //affiche le résultat après calcul des options
-
-      malusCheck.innerHTML = "0";
     }
   } else {
     displayAddResult.innerHTML = basicResult;
@@ -108,21 +111,26 @@ function critics(basicResult, convFace) {
   var succes = convFace - 1;
 
   if (basicResult == convFace || basicResult == succes) {
-    displayBasicResult.style.webkitTextStrokeColor = "green";
+    displayBasicResult.style.webkitTextStrokeColor = "#52FF4D";
   } else if (basicResult == 1) {
-    displayBasicResult.style.webkitTextStrokeColor = "red";
+    displayBasicResult.style.webkitTextStrokeColor = "#750E00";
   }
-} // function checkCheats(checkCheatOptions,cheatSucces,cheatFail,convFace){
-//   checkCheatOptions=document.querySelector(".activeOptions");
-// console.log(convFace)
-//   if(checkCheatOptions!=null){
-//       console.log(cheatSucces)
-//       if(cheatSucces!=undefined){
-//         displayBasicResult.innerHTML=convFace;
-//       }else if(cheatFail!=undefined){
-//         displayBasicResult.innerHTML="1";
-//       }
-//   }else{
-//     console.log("pas de triche détecté")
-//   }
-//};
+}
+
+function checkCheats(checkCheatOptions, cheatSucces, cheatFail, convFace) {
+  checkCheatOptions = document.querySelector(".activeOptions");
+
+  if (checkCheatOptions != null) {
+    if (cheatSucces != undefined) {
+      displayBasicResult.innerHTML = convFace;
+      displayAddResult.innerHTML = convFace;
+      return succesPriority = 5;
+    } else if (cheatFail != undefined) {
+      displayBasicResult.innerHTML = "1";
+      displayAddResult.innerHTML = "1";
+      return failPriority = 1;
+    }
+  }
+}
+
+;
