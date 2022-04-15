@@ -37,6 +37,7 @@ function activeSucces() {
   critSucces.classList.add("activeSucces"); //apparition de la div par le css
 
   critSucces.classList.remove("cheatsucces");
+  critFail.classList.remove("activeFail"); //supprime la class ajouté l'échec critique
 }
 
 function activeFail() {
@@ -44,6 +45,7 @@ function activeFail() {
   critFail.classList.add("activeFail"); //apparition de la div par le css
 
   critFail.classList.remove("cheatfail");
+  critSucces.classList.remove("activeSucces"); //supprime la class ajouter par la réussite critique
 }
 
 detectCheatMod.addEventListener("click", affichageMenu);
