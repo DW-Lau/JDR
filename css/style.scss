@@ -10,6 +10,10 @@
         margin: 0;
     }
 }
+ul li, a{
+    text-decoration: none;
+    list-style: none;
+}
 @mixin aligment($direction,$justify,$align) {
     display: flex;
     flex-direction: $direction;
@@ -51,7 +55,11 @@ body{
                 }
            }
        }
-       header, section, footer{
+       header{
+           width: 80%;
+           z-index: 50;
+       }
+        section, footer{
            width: 80%;
            z-index: 15;
        }
@@ -59,26 +67,66 @@ body{
             font-family:$fontMdvl;
             height: 15%;
             @include aligment(row,space-between ,flex-start );//flexbox pour les élements à l'intérieur
-                h1{
-                    font-family:$fontMdvl;
-                    max-width: 417px;
-                    text-align: center;
-                    font-size: 180px;
-                    line-height: 160px;
-                    color:rgb(211, 178, 0);
-                    opacity: 0.5;
-                    -webkit-text-stroke: 1px #242424;
-                    @include screen-L{
-                        font-size: 150px;
-                        line-height: 130px;
-                        -webkit-text-stroke: 2px #242424;
-                    }
-                    @include tab{
-                        opacity: 0.75;
-                        font-size: 100px;
-                        line-height: 80px;
+                .header--infos{
+                    @include aligment(row,space-around ,flex-start );
+                    h1{
+                        font-family:$fontMdvl;
+                        max-width: 417px;
+                        text-align: center;
+                        font-size: 180px;
+                        line-height: 160px;
+                        color:rgb(211, 178, 0);
+                        opacity: 0.5;
                         -webkit-text-stroke: 1px #242424;
-                    } 
+                        
+                        @include screen-L{
+                            font-size: 150px;
+                            line-height: 130px;
+                            -webkit-text-stroke: 2px #242424;
+                        }
+                        @include tab{
+                            opacity: 0.75;
+                            font-size: 100px;
+                            line-height: 80px;
+                            -webkit-text-stroke: 1px #242424;
+                        } 
+                    }
+                    .questionMark{
+                        align-items: baseline;
+                        // font-weight: bold;
+                        cursor: help;
+                        font-size: 2rem;
+                        color: #fff;
+                        //-webkit-text-stroke: 1px #242424;
+                    }
+                    .txt--infos {
+                        display: none;
+                         .infos,ul,h2{
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 1.2em;
+                            color: #fff;
+                             a{
+                                 color: #5c4d02;
+                                font-size: 1.3rem;
+                            }
+                        }
+                        h2{
+                            font-size: 2rem;
+                            padding-bottom: 25px;
+                            text-align: center;
+                        }
+                    }
+                    .questionMark:hover ~.txt--infos{
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        transform: translate(50%,50%);
+                        display: inline-block;
+                        max-height: 50%;
+                        max-width: 50%;
+                        padding:3%;
+                        background-color: #242424;
+                    }
                 }
                 .header--options { 
                     max-width:765px;
