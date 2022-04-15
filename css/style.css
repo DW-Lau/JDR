@@ -148,7 +148,7 @@ body header .header--infos .txt--infos h2 {
   text-align: center;
 }
 
-body header .header--infos .questionMark:hover ~ .txt--infos {
+body header .header--infos .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -158,6 +158,12 @@ body header .header--infos .questionMark:hover ~ .txt--infos {
   max-width: 50%;
   padding: 3%;
   background-color: #242424;
+}
+
+body header .header--infos .overlay .close--infos {
+  font-size: 1em;
+  color: #fff;
+  text-align: center;
 }
 
 body header .header--options {
