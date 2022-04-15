@@ -33,11 +33,14 @@ function affichageMenu(){//modification du name class pour faire apparaître la 
 function activeSucces(){//modification du name class pour faire apparaître la div voulue
     critSucces.classList.add("activeSucces"); //apparition de la div par le css
     critSucces.classList.remove("cheatsucces");
+    critFail.classList.remove("activeFail");//supprime la class ajouté l'échec critique
+
 }
 
 function activeFail(){//modification du name class pour faire apparaître la div voulue
     critFail.classList.add("activeFail"); //apparition de la div par le css
     critFail.classList.remove("cheatfail");
+    critSucces.classList.remove("activeSucces");//supprime la class ajouter par la réussite critique
 
 }
 
