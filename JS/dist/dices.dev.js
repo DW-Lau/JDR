@@ -113,9 +113,9 @@ function critics(basicResult, convFace) {
   var succes = convFace - 1;
 
   if (basicResult == convFace || basicResult == succes) {
-    displayBasicResult.style.webkitTextStrokeColor = "#52FF4D";
-  } else if (basicResult == 1) {
     displayBasicResult.style.webkitTextStrokeColor = "#750E00";
+  } else if (basicResult == 1 || basicResult == 2) {
+    displayBasicResult.style.webkitTextStrokeColor = "#52FF4D";
   }
 }
 
