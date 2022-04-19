@@ -1,4 +1,4 @@
-const btnCredit=document.querySelector(".questionMark");
+const btnCredit=document.querySelector(".exclamationMark");
 
 let overlay=document.querySelector(".txt--infos");
 let btnClose=document.querySelector(".close--infos");

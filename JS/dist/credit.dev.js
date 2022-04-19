@@ -1,6 +1,6 @@
 "use strict";
 
-var btnCredit = document.querySelector(".questionMark");
+var btnCredit = document.querySelector(".exclamationMark");
 var overlay = document.querySelector(".txt--infos");
 var btnClose = document.querySelector(".close--infos");
 btnCredit.addEventListener("click", function () {

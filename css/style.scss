@@ -10,10 +10,7 @@
         margin: 0;
     }
 }
-ul li, a{
-    text-decoration: none;
-    list-style: none;
-}
+
 @mixin aligment($direction,$justify,$align) {
     display: flex;
     flex-direction: $direction;
@@ -91,41 +88,75 @@ body{
                             -webkit-text-stroke: 1px #242424;
                         } 
                     }
-                    .questionMark{
+                    .exclamationMark{
                         align-items: baseline;
-                        // font-weight: bold;
+                        text-align: center;
+                        height: 50px;
+                        width: 50px;
                         cursor: help;
-                        font-size: 2rem;
+                        font-size: 1.8rem;
                         color: #fff;
-                        //-webkit-text-stroke: 1px #242424;
+                        border: solid #fff 3px;
+                        border-radius: 50%;
+                        padding:10px;
                     }
                     .txt--infos {
                         display: none;
                          .infos,ul,h2{
                             font-family: Arial, Helvetica, sans-serif;
-                            font-size: 1.2em;
+                            font-size: 1em;
                             color: #fff;
                              a{
-                                 color: #5c4d02;
-                                font-size: 1.3rem;
+                                 color: #fff;
+                                font-size: 1rem;
                             }
+                        }
+                        ul{
+                            line-height: 1.4rem;
+                            margin: 5px;
+                            padding-left: 2%;
                         }
                         h2{
                             font-size: 2rem;
                             padding-bottom: 25px;
                             text-align: center;
                         }
+                        table{
+                            width: 100%;
+                            color:#fff;
+                            
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 1.2em;
+                            line-height: 22px;
+                            margin-bottom: 2%;
+                            thead{
+                                tr td{
+                                    background-color: rgba(255, 255, 255, 0.1);
+                                    text-align: center;
+                                    padding-right: 5px;
+                                }
+                            }
+                            tbody{
+                                tr td{
+                                    padding: 15px;
+                                }
+                                
+                            }
+                          
+                        }
+                        
                     }
                     .overlay{
                         position: fixed;
-                        top:0;
-                        left:0;
-                        transform: translate(50%,50%);
+                        top:50%;
+                        left:50%;
+                        transform: translate(-50%,-50%);
                         display: inline-block;
                         max-height: 50%;
                         max-width: 50%;
-                        padding:3%;
+                        padding:2%;
                         background-color: #242424;
+                        border-radius:25px;
                         .close--infos{
                             position: absolute;
                             top: 50px;
