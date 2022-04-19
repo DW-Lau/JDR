@@ -68,7 +68,9 @@ function drawDices() {
 }
 
 function randomThrow(min, convFace) {
-  var basicResult = Math.floor(Math.random() * (convFace - min) + min);
+  var faceMax = convFace + 1;
+  var basicResult = Math.floor(Math.random() * (faceMax - min) + min);
+  console.log(basicResult);
   displayBasicResult.innerHTML = basicResult; //afiche le résultat du des
   //--------RECUPERATION DES  OPTIONS--------//
 

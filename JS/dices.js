@@ -40,7 +40,9 @@ function drawDices(){//lancer de des
 
 }
 function randomThrow(min,convFace){
-  let basicResult=Math.floor(Math.random()*(convFace-min)+min);
+  let faceMax=convFace+1;
+  let basicResult=Math.floor(Math.random()*(faceMax-min)+min);
+  console.log(basicResult);
   displayBasicResult.innerHTML=basicResult;//afiche le résultat du des
 //--------RECUPERATION DES  OPTIONS--------//
       let bonusCheck=document.querySelector('.input--bonus').value;  
