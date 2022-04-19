@@ -130,7 +130,7 @@ body header .header--infos .txt--infos h2 {
   text-align: center;
 }
 body header .header--infos .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transform: translate(50%, 50%);
@@ -141,7 +141,10 @@ body header .header--infos .overlay {
   background-color: #242424;
 }
 body header .header--infos .overlay .close--infos {
-  font-size: 1em;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 1.5em;
   color: #fff;
   text-align: center;
 }
