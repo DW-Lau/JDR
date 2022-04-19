@@ -280,6 +280,9 @@ body{
                 .draw--number,.draw--dice{
                     width: 50%;
                 }
+                .draw--dice{
+                    text-align: center;
+                }
                 .draw--display{
                    max-width: 200px;
                 }
@@ -290,7 +293,7 @@ body{
                 }
                 .draw--number p{
                     text-align: center;
-                    font-size:15em;
+                    font-size:14em;
                     color: #fff;
                     -webkit-text-stroke: 5px #957D03;
                     text-shadow: 5px 4px 25px #000000;
@@ -381,7 +384,7 @@ body{
                 }
                 .result--number p{
                     text-align: center;
-                    font-size:15em;
+                    font-size:14em;
                     color: #fff;
                     -webkit-text-stroke: 5px #957D03;
                     text-shadow: 5px 4px 25px #000000;

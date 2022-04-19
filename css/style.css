@@ -347,6 +347,10 @@ body section .draw .draw--number, body section .draw .draw--dice {
   width: 50%;
 }
 
+body section .draw .draw--dice {
+  text-align: center;
+}
+
 body section .draw .draw--display {
   max-width: 200px;
 }
@@ -359,7 +363,7 @@ body section .draw .draw--display {
 
 body section .draw .draw--number p {
   text-align: center;
-  font-size: 15em;
+  font-size: 14em;
   color: #fff;
   -webkit-text-stroke: 5px #957D03;
   text-shadow: 5px 4px 25px #000000;
@@ -461,7 +465,7 @@ body section .result .result--number, body section .result .result--swordsShield
 
 body section .result .result--number p {
   text-align: center;
-  font-size: 15em;
+  font-size: 14em;
   color: #fff;
   -webkit-text-stroke: 5px #957D03;
   text-shadow: 5px 4px 25px #000000;
