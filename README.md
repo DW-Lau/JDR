@@ -1,2 +1,2 @@
 # JDR
- /------------------- Application de lancer de Dé pour JDR -------------------/
+ /------------------- Application de lancer de Dés pour JDR -------------------/
