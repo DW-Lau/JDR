@@ -6,7 +6,7 @@ __Application de lancer de Dés pour JDR__
  **A propos de l'application:**
  
 :hammer_and_wrench: Techno :
-* HMTML
+* HTML
 * SCSS / CSS
 * JavaScript (vanilla)
  
