@@ -1,16 +1,10 @@
 @import './responsivL';
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     cursor: pointer;
-    @include screen-L{
-        padding: 0;
-        margin: 0;
-    }
 }
-
 @mixin aligment($direction,$justify,$align) {
     display: flex;
     flex-direction: $direction;
@@ -31,25 +25,17 @@ body{
     @include aligment(column,space-evenly ,center );
     height: 100vh;
     width: 100%;
-    @include smartphone{
-        @include flexAlign(wrap,center ,center );
-    }//modification flex pour la version mobile
-       .bkgd--img{
+    overflow-y: hidden;
+        .bkgd--img{
            position: absolute;
            top: 0;
            left: 0;
            z-index: 0;
            width: 100%;
            height: 100%;
-           @include screen-L{
-               max-width: 1440px;
-           }
            img{
                width: 100%;
                height: 100%;
-                @include screen-L{
-                    max-width:1440px ;
-                }
            }
        }
        header{
@@ -64,483 +50,262 @@ body{
             font-family:$fontMdvl;
             height: 15%;
             @include aligment(row,space-between ,flex-start );//flexbox pour les élements à l'intérieur
-                .header--infos{
-                    @include aligment(row,space-around ,flex-start );
-                    h1{
-                        font-family:$fontMdvl;
-                        max-width: 417px;
-                        text-align: center;
-                        font-size: 180px;
-                        line-height: 160px;
-                        color:rgb(211, 178, 0);
-                        opacity: 0.5;
-                        -webkit-text-stroke: 1px #242424;
-                        
-                        @include screen-L{
-                            font-size: 150px;
-                            line-height: 130px;
-                            -webkit-text-stroke: 2px #242424;
-                        }
-                        @include tab{
-                            opacity: 0.75;
-                            font-size: 100px;
-                            line-height: 80px;
-                            -webkit-text-stroke: 1px #242424;
-                        } 
-                    }
-                    .exclamationMark{
-                        align-items: baseline;
-                        text-align: center;
-                        height: 50px;
-                        width: 50px;
-                        cursor: help;
-                        font-size: 1.8rem;
-                        color: #fff;
-                        border: solid #fff 3px;
-                        border-radius: 50%;
-                        padding:10px;
-                    }
-                    .txt--infos {
-                        display: none;
-                         .infos,ul,h2{
-                            font-family: Arial, Helvetica, sans-serif;
-                            font-size: 1em;
-                            list-style-type: square;
-                            color: #fff;
-                             a{
-                                 color: #fff;
-                                font-size: 1rem;
-                            }
-                        }
-                        ul{
-                            line-height: 1.4rem;
-                            margin: 5px;
-                            padding-left: 2%;
-                        }
-                        h2{
-                            font-size: 2rem;
-                            padding-bottom: 25px;
-                            text-align: center;
-                        }
-                        table{
-                            width: 100%;
-                            color:#fff;
-                            
-                            font-family: Arial, Helvetica, sans-serif;
-                            font-size: 1.2em;
-                            line-height: 22px;
-                            margin-bottom: 2%;
-                            thead{
-                                tr td{
-                                    background-color: rgba(255, 255, 255, 0.1);
-                                    text-align: center;
-                                    padding-right: 5px;
-                                }
-                            }
-                            tbody{
-                                tr td{
-                                    padding: 15px;
-                                }
-                                
-                            }
-                          
-                        }
-                        
-                    }
-                    .overlay{
-                        position: fixed;
-                        top:50%;
-                        left:50%;
-                        transform: translate(-50%,-50%);
-                        display: inline-block;
-                        max-height: 70%;
-                        max-width: 70%;
-                        overflow-y:auto ;
-                        padding:2%;
-                        background-color: #242424;
-                        border-radius:25px;
-                        box-shadow: 0px 5px 55px rgba(255, 255, 255, 0.2);
-                        .close--infos{
-                            position: absolute;
-                            top: 5%;
-                            right: 5%;
-                            font-size: 1.5em;
-                            color:#fff;
-                            text-align: center;
-                        }
-                    }
-                }
-                .header--options { 
-                    max-width:765px;
-                    margin: 0;
-                    .reset{
-                        margin:auto 15px;
-                        .reset--option{
-                            font-size: 1.3em;
-                            color: #fff;
-                        }
-                    }
-                    .reset:hover>.reset--option{
-                        animation: reload 3s ease infinite;
-                    }
-                    @include aligment(row,space-evenly ,flex-start ); 
-                        label{
-                            font-size: 2rem;
-                            font-family: "MedievalSharp";
-                        
-                        }
-                       input{
-                            max-width:100px;
-                            border:1px #fff;
-                            font-size:1.9rem;
-                            color:#fff;
-                            text-align: center;
-                            border-style:none;
-                            border-bottom-style:dotted;
-                            background: transparent;
-                            @include screen-L{
-                                font-size: 1.5rem;
-                            }
-                        }   
-                        .input--space{
-                            align-self: flex-start;
-                            display: block;
-                            width: 2px;
-                            height: 36px;
-                            background-color: #fff;
-                            margin: 0 15px;
-                        }
-                        .cheatMod{
-                            max-width: 200px;
-                            .cheat  {//checkbox de l'input cheatbox modifié
-                                width:25px;
-                                height: 25px;
-                                @include screen-L{
-                                    height: 20px;
-                                    width: 20px;
-                                }
-                            }
-                            .inactivated{//Style par défault. Changement de menu depuis le JS
-                                display: none;
-                            }
-                            .activeOptions{
-                                @include aligment(column,space-evenly ,flex-start );
-                                .Crit{
-                                    @include aligment(row,space-between ,center );
-                                    width: 100%; height:25px;
-                                    .accent{
-                                        text-transform: capitalize;
-                                    }
-                                    label{
-                                        font-size: 1.1em;
-                                    } 
-                                    .cheat  {//checkbox de l'input cheatbox modifié
-                                        width:20px;
-                                        height: 20px;
-                                    }
-                                }
-                            }//fin activeOptions
-                        }//fin cheatMod
-                }//fin header--options
-                @include screen-L{
-                    .header--options{
-                        label{
-                            font-size: 1.8rem;
-                        }
-                    }
-                    
-                }//FIN MEDIA SCREEN L
-                @include laptop{
-                    h1{
-                        width:25%;
-                        font-size: 100px;
-                        line-height: 80px;
-                       
-                    }
-                    .header--options{
-                        width: 60%;
-                        label{
-                            font-size: 1.2rem;
-                        }
-                        input{
-                            max-width:50px;
-                            font-size:1.2rem;
-                        }
-                    }
-                }//FIN MEDIA LAPTOP
-                @include tab{
-                    .header--options{
-                        label{
-                            font-size: 1.2rem;
-                        }
-                        input{
-                            max-width:40px;
-                            font-size:1rem;
-                        }
-                        .input--space{
-                            display: none;
-                        }
+            
+            .header--infos{
+                @include aligment(row,space-around ,flex-start );
+                h1{
+                    font-family:$fontMdvl;
+                    max-width: 417px;
+                    text-align: center;
+                    font-size: 180px;
+                    line-height: 160px;
+                    color:rgb(211, 178, 0);
+                    opacity: 0.5;
+                    -webkit-text-stroke: 1px #242424;
                     }
 
-                }//FIN MEDIA TAB
-                @include smartphone {
-                    width: 100%;
-                    height: 15%;
-                    h1{
-                        margin-left: 5%;
-                        font-size: 50px;
-                    }
-                    .header--options{
-                        width: 60%;
-                        @include aligment(column, space-evenly ,center );
-                        label{
+                .exclamationMark{
+                    align-items: baseline;
+                    text-align: center;
+                    height: 50px;
+                    width: 50px;
+                    cursor: help;
+                    font-size: 1.8rem;
+                    color: #fff;
+                    border: solid #fff 3px;
+                    border-radius: 50%;
+                    padding:10px;
+                }
+                .txt--infos {
+                    display: none;
+                    .infos,ul,h2{
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 1em;
+                        list-style-type: square;
+                        color: #fff;
+                        a{
+                            color: #fff;
                             font-size: 1rem;
                         }
-                        input{
-                            max-width:40px;
-                            font-size:1rem;
+                    }
+                    ul{
+                        line-height: 1.4rem;
+                        margin: 5px;
+                        padding-left: 2%;
+                    }
+                    h2{
+                        font-size: 2rem;
+                        padding-bottom: 25px;
+                        text-align: center;
+                    }
+                    table{
+                        width: 100%;
+                        color:#fff;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 1.2em;
+                        line-height: 22px;
+                        margin-bottom: 2%;
+                        thead{
+                            tr td{
+                                background-color: rgba(255, 255, 255, 0.1);
+                                text-align: center;
+                                padding-right: 5px;
+                            }
                         }
-                        .input--space{
-                            display: none;
+                        tbody{
+                            tr td{
+                                padding: 15px;
+                            }
                         }
-                        .cheatMod{
-                            .cheat{
-                            width: 15px;
-                            height: 15px;
+                    }
+                }
+                .overlay{
+                    position: fixed;
+                    top:50%;
+                    left:50%;
+                    transform: translate(-50%,-50%);
+                    display: inline-block;
+                    max-height: 70%;
+                    max-width: 70%;
+                    overflow-y:auto ;
+                    padding:2%;
+                    background-color: #242424;
+                    border-radius:25px;
+                    box-shadow: 0px 5px 55px rgba(255, 255, 255, 0.2);
+                    .close--infos{
+                        position: absolute;
+                        top: 5%;
+                        right: 5%;
+                        font-size: 1.5em;
+                        color:#fff;
+                        text-align: center;
+                    }
+                }
+            }//FIN HEADER--INFOS
+// ------------------------------------------FIN LAPTOP  HEADER INFOS-------------------------------------------//
+            .header--options { 
+                max-width:765px;
+                margin: 0;
+                .reset{
+                    margin:auto 15px;
+                    .reset--option{
+                        font-size: 1.3em;
+                        color: #fff;
+                    }
+                }
+                .reset:hover>.reset--option{
+                    animation: reload 3s ease infinite;
+                }
+                @include aligment(row,space-evenly ,flex-start ); 
+                    label{
+                        font-size: 2rem;
+                        font-family: "MedievalSharp";  
+                    }
+                    input{
+                        max-width:100px;
+                        border:1px #fff;
+                        font-size:1.9rem;
+                        color:#fff;
+                        text-align: center;
+                        border-style:none;
+                        border-bottom-style:dotted;
+                        background: transparent;
+                    }   
+                    .input--space{
+                        align-self: flex-start;
+                        display: block;
+                        width: 2px;
+                        height: 36px;
+                        background-color: #fff;
+                        margin: 0 15px;
+                    }
+                .cheatMod{
+                        max-width: 200px;
+                        .cheat  {//checkbox de l'input cheatbox modifié
+                            width:25px;
+                            height: 25px;
                         }
+                        .inactivated{//Style par défault. Changement de menu depuis le JS
+                             display: none;
                         }
                         .activeOptions{
-                            font-size: 0.8em;
-                        }
-                    }
-                }//FIN MEDIA SMARTPHONE
+                            @include aligment(column,space-evenly ,flex-start );
+                            .Crit{
+                                @include aligment(row,space-between ,center );
+                                width: 100%; height:25px;
+                                .accent{
+                                    text-transform: capitalize;
+                                }
+                                label{
+                                    font-size: 1.1em;
+                                } 
+                                .cheat  {//checkbox de l'input cheatbox modifié
+                                    width:20px;
+                                    height: 20px;
+                                }
+                            }
+                        }//fin activeOptions
+                }//fin cheatMod
+            }//fin header--options
         }
-        //----------------------------Fin Section HEADER----------------------------
+ //----------------------------Fin Section HEADER----------------------------
         section{
-            height: 40%;
-            @include aligment(row,space-evenly,baseline );
-            .draw ,.result{
-                width: 40%;
-                @include flexAlign(wrap,space-around,center);
-            }
-            .draw{
-                .draw--number,.draw--dice{
-                    width: 50%;
-                }
-                .draw--dice{
-                    text-align: center;
-                }
-                .draw--display{
-                   max-width: 200px;
-                }
-                @include laptop{
-                    .draw--display{
-                        width: 145px;
-                    }
-                }
-                .draw--number p{
-                    text-align: center;
-                    font-size:14em;
-                    color: #fff;
-                    -webkit-text-stroke: 5px #957D03;
-                    text-shadow: 5px 4px 25px #000000;
-                }
-                .draw--btn{
-                    max-width: 100px;
-                    max-height: 60px;
-                    text-align: center;
-                    
-
-                    .fa-solid{ 
-                        background-color: #957D03;
-                        color: #fff;
-                        font-size:3em ;
-                        padding:10px;
-                        border: #fff 2px dashed;
-                        border-radius: 5px;
-                    }
-                }
-                .draw--btn:hover{
-                    .fa-solid{
-                        background-color: #5c4d02;
-                        font-size: 3.2em;
-                    }
-                }
-                @include screen-L{
-                    .draw--number p{
-                        font-size: 12rem;
-                    }
-                    .draw--dice{
-                        width: 41%;
-                    }
-                    .draw--btn{
-                        max-width: 80px;
-                        max-height: 40px;
-                        .fa-solid{ 
-                            font-size:2.8em ;
-                            padding:8px;
-                        }
-                    }
-                    .draw--btn:hover{
-                        .fa-solid{
-                            font-size: 3em;
-                        }
-                    }
-                }//FIN SCREEN L
-
-               
-            }//Fin DRAW
-            @include tab{
-                @include aligment(column,space-evenly ,center );
-           
-                .draw ,.result{
-                    width: 100%;
-                    @include aligment(row,space-evenly ,center );
-                        .draw--number,.draw--dice,.draw--btn{
-                            max-width: 33%;
-                        }
-                        .draw--number p{
-                            font-size: 8em;
-                        }
-                        .draw--display{
-                            max-width: 50%;
-                        }
-                }
-               
-            }//FIN MEDIA TAB
-            @include smartphone{
-                height: 75%;
-                width:70%;
-            }//FIN MEDIA SMARTPHONE
-            .equal { 
-                max-width: 15%;
-                margin: 2%;
-                img{
-                     max-width:200px;
-                }
-                @include screen-L{
-                    width: 17%;
-                    margin:2%;
-                    img{
-                        width: 100%;
-                    }
-                }
-            }
-            .result{
-                .result--number,.result--swordsShield{
-                    width: 50%  ;
-                }
-                .result--swordsShield{
-                    text-align: center;
-                }
-                .result--number p{
-                    text-align: center;
-                    font-size:14em;
-                    color: #fff;
-                    -webkit-text-stroke: 5px #957D03;
-                    text-shadow: 5px 4px 25px #000000;
-                }
-                .result--swordsShield img{
-                    max-width: 200px;
-                }
-                @include laptop{
-                    .result--number p{
-                        font-size:10em;
-                    }
-                    .result--swordsShield img{
-                        width: 145px;
-                    }
-                }
-
-                @include screen-L{
-                   .result--number  p{
-                       font-size: 12rem;
-                   }
-                }
-                @include tab{
-                    .result--number p{
-                        font-size: 8em;
-                    }
-                }
-            }
+        height: 40%;
+        @include aligment(row,space-evenly,baseline );
+        .draw ,.result{
+            width: 40%;
+            @include flexAlign(wrap,space-around,center);
         }
-        //----------------------------Fin Section SECTION----------------------------
-        footer{
-            height: 20%;
-            .dices{
-                @include aligment(row,space-evenly ,baseline );
-                width: 100%;
-                .btn--dice{
-                    border:2px transparent solid;
-                    padding:15px 5px 5px 5px;
-                    width: 14%;
-                    @include aligment(column,space-evenly ,center );
-                    @include screen-L{
-                        padding: 15px 0 5px 0;
-                    }
-                    img{
-                        height:130px;
-                    }
-                    p{
-                        text-align: center;
-                        font-size:3.5em;
-                        color: #fff;
-                        -webkit-text-stroke: 2px rgb(150, 125, 3);
-                        text-shadow: 5px 4px 25px #000000;
-                    }
-                }
-                .btn--dice:hover{
-                    border:2px dashed;
-                    border-color: rgba(255, 255, 255, 0.5);
+        .draw{
+            .draw--number,.draw--dice{
+                width: 50%;
+            }
+            .draw--dice{
+                text-align: center;
+            }
+            .draw--display{
+               max-width: 200px;
+            }
+            .draw--number p{
+                text-align: center;
+                font-size:14em;
+                color: #fff;
+                -webkit-text-stroke: 5px #957D03;
+                text-shadow: 5px 4px 25px #000000;
+            }
+            .draw--btn{
+                max-width: 100px;
+                max-height: 60px;
+                text-align: center;
+                .fa-solid{ 
+                    background-color: #957D03;
+                    color: #fff;
+                    font-size:3em ;
+                    padding:10px;
+                    border: #fff 2px dashed;
                     border-radius: 5px;
                 }
             }
-            @include laptop{
-                height: 25%;
-                .dices{
-                    @include flexAlign(wrap,space-evenly ,center );
-                    .btn--dice{
-                        padding:0px;
-                         width: 22%;
-                        @include aligment(column,space-evenly ,center );
-                        img{
-                            width: 95px;
-                            height:95px;
-                        }
-                         .btn--dice-hundred{
-                                width:100%;
-                            }
-                        p{
-                            font-size:2.5em;
-                            -webkit-text-stroke: 1px rgb(150, 125, 3);
-                            text-shadow: 5px 4px 15px #000000;
-                        }
-                    }
+            .draw--btn:hover{
+                .fa-solid{
+                    background-color: #5c4d02;
+                    font-size: 3.2em;
                 }
             }
-            @include smartphone{
-                width: 25%;
+        }//Fin DRAW
+        .equal { 
+            max-width: 15%;
+            margin: 2%;
+            img{
+                max-width:200px;
+            }
+        }
+        .result{
+            .result--number,.result--swordsShield{
+                width: 50%  ;
+            }
+            .result--swordsShield{
+                text-align: center;
+            }
+            .result--number p{
+                text-align: center;
+                font-size:14em;
+                color: #fff;
+                -webkit-text-stroke: 5px #957D03;
+                text-shadow: 5px 4px 25px #000000;
+            }
+            .result--swordsShield img{
+                max-width: 200px;
+            }
+        }
+        }//----------------------------Fin Section SECTION----------------------------//
+        footer{
+        height: 20%;
+        .dices{
+            @include aligment(row,space-evenly ,baseline );
+            width: 100%;
+            .btn--dice{
+                border:2px transparent solid;
+                padding:15px 5px 5px 5px;
+                width: 14%;
                 @include aligment(column,space-evenly ,center );
-                .dices{
-                    
-                    .btn--dice{
-                        padding:0px;
-                        @include aligment(column,space-evenly ,center );
-                        img{
-                            width: 95px;
-                            height:95px;
-                        }
-                         .btn--dice-hundred{
-                                width:100%;
-                            }
-                        p{
-                            font-size:2.5em;
-                            -webkit-text-stroke: 1px rgb(150, 125, 3);
-                            text-shadow: 5px 4px 15px #000000;
-                        }
-                    }
+                img{
+                    height:130px;
+                }
+                p{
+                    text-align: center;
+                    font-size:3.5em;
+                    color: #fff;
+                    -webkit-text-stroke: 2px rgb(150, 125, 3);
+                    text-shadow: 5px 4px 25px #000000;
                 }
             }
+            .btn--dice:hover{
+                border:2px dashed;
+                border-color: rgba(255, 255, 255, 0.5);
+                border-radius: 5px;
+            }
+        }
         }
 }
 @keyframes reload {
