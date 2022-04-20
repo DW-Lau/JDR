@@ -401,8 +401,9 @@ body{
             }//FIN MEDIA SMARTPHONE
             .equal { 
                 max-width: 15%;
+                margin: 2%;
                 img{
-                     max-width:272px;
+                     max-width:200px;
                 }
                 @include screen-L{
                     width: 17%;
@@ -416,6 +417,9 @@ body{
                 .result--number,.result--swordsShield{
                     width: 50%  ;
                 }
+                .result--swordsShield{
+                    text-align: center;
+                }
                 .result--number p{
                     text-align: center;
                     font-size:14em;
@@ -424,7 +428,7 @@ body{
                     text-shadow: 5px 4px 25px #000000;
                 }
                 .result--swordsShield img{
-                    width: 247px;
+                    max-width: 200px;
                 }
                 @include laptop{
                     .result--number p{
@@ -462,12 +466,8 @@ body{
                         padding: 15px 0 5px 0;
                     }
                     img{
-                        width: 130px;
                         height:130px;
                     }
-                     .btn--dice-hundred{
-                            width:94%;
-                        }
                     p{
                         text-align: center;
                         font-size:3.5em;

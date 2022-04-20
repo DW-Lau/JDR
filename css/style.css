@@ -473,10 +473,11 @@ body section .draw .draw--btn:hover .fa-solid {
 
 body section .equal {
   max-width: 15%;
+  margin: 2%;
 }
 
 body section .equal img {
-  max-width: 272px;
+  max-width: 200px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -493,6 +494,10 @@ body section .result .result--number, body section .result .result--swordsShield
   width: 50%;
 }
 
+body section .result .result--swordsShield {
+  text-align: center;
+}
+
 body section .result .result--number p {
   text-align: center;
   font-size: 14em;
@@ -502,7 +507,7 @@ body section .result .result--number p {
 }
 
 body section .result .result--swordsShield img {
-  width: 247px;
+  max-width: 200px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -555,12 +560,7 @@ body footer .dices .btn--dice {
 }
 
 body footer .dices .btn--dice img {
-  width: 130px;
   height: 130px;
-}
-
-body footer .dices .btn--dice .btn--dice-hundred {
-  width: 94%;
 }
 
 body footer .dices .btn--dice p {
