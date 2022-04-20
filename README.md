@@ -1,11 +1,16 @@
 # JDR
-/------------------- Application de lancer de Dés pour JDR -------------------/
+__Application de lancer de Dés pour JDR__
 
 ![image](https://user-images.githubusercontent.com/35140737/164208362-67f19483-7cad-4a5c-94c5-12d8fef06191.png)
  
- A Propos de l'application:
+ **A propos de l'application:**
  
-  Dices - JDR est une application de lancer de dé pour JDR ( jeu de rôle). 
+:hammer_and_wrench: Techno :
+* HMTML
+* SCSS / CSS
+* JavaScript (vanilla)
+ 
+Dices - JDR est une application de lancer de dé pour JDR ( jeu de rôle). 
   
   Le menu d'options permet d'ajout Bonus ou Malus. L'option choix sera alors automatiquement additionnée au résultat final.
   Une troisième option, le mode "triche", permettra à l'utilisateur d'activer les résultats critiques. Succes ou échecs seront alors automatique, quelque soit le dé ou la modification appliqué.
