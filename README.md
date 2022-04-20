@@ -10,7 +10,7 @@ __Application de lancer de Dés pour JDR__
 * SCSS / CSS
 * JavaScript (vanilla)
  
-Dices - JDR est une application de lancer de dé pour JDR ( jeu de rôle). 
+:speech_balloon: Dices - JDR est une application de lancer de dé pour JDR ( jeu de rôle). 
   
   Le menu d'options permet d'ajout Bonus ou Malus. L'option choix sera alors automatiquement additionnée au résultat final.
   Une troisième option, le mode "triche", permettra à l'utilisateur d'activer les résultats critiques. Succes ou échecs seront alors automatique, quelque soit le dé ou la modification appliqué.
