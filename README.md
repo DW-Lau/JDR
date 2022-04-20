@@ -1,5 +1,5 @@
 # JDR
- /------------------- Application de lancer de Dés pour JDR -------------------/
+/------------------- Application de lancer de Dés pour JDR -------------------/
  
  A Propos de l'application:
  
@@ -11,3 +11,15 @@
 Par défault, aucun dé n'est séléctionné, l'utilisateur doit ainsi choisir le dé voulu avant de lancer.
 
 Critiques : L'affichage des critiques sera légèrement différent en fonction d'une réussite ou d'un échec
+
+Patch Notes 1.01:
+
+* Correction d'affichage du dé de 100, avec un nouveau design.
+* Correction d'affichage des nombres obtenus avant et après calcul
+* Correction de la valeur maximun pour tous les dés.
+* Suppression des valeurs négatives si malus trop important.
+
+Ajout de l'option reset des options.
+
+ Réinitialisation de tous les options pour les utilisateurs.
+
