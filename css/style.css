@@ -208,6 +208,19 @@ body header .header--options {
   align-items: flex-start;
 }
 
+body header .header--options .reset {
+  margin: auto 15px;
+}
+
+body header .header--options .reset .reset--option {
+  font-size: 1.3em;
+  color: #fff;
+}
+
+body header .header--options .reset:hover > .reset--option {
+  animation: reload 3s ease infinite;
+}
+
 body header .header--options label {
   font-size: 2rem;
   font-family: "MedievalSharp";
@@ -638,6 +651,12 @@ body footer .dices .btn--dice:hover {
     font-size: 2.5em;
     -webkit-text-stroke: 1px #967d03;
     text-shadow: 5px 4px 15px #000000;
+  }
+}
+
+@keyframes reload {
+  100% {
+    transform: rotate(360deg);
   }
 }
 /*# sourceMappingURL=style.css.map */

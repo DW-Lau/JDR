@@ -173,6 +173,16 @@ body{
                 .header--options { 
                     max-width:765px;
                     margin: 0;
+                    .reset{
+                        margin:auto 15px;
+                        .reset--option{
+                            font-size: 1.3em;
+                            color: #fff;
+                        }
+                    }
+                    .reset:hover>.reset--option{
+                        animation: reload 3s ease infinite;
+                    }
                     @include aligment(row,space-evenly ,flex-start ); 
                         label{
                             font-size: 2rem;
@@ -532,4 +542,9 @@ body{
                 }
             }
         }
+}
+@keyframes reload {
+    100%{
+        transform:rotate(360deg); 
+    }
 }

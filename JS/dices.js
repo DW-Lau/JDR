@@ -5,6 +5,7 @@ let displayBasicResult=document.querySelector('.numberDrawNull');//récupére le
 let displayAddResult=document.querySelector('.numberResultNull');//récupère le ? par défault à droite, celui-ci sera le résultat après calcul des options
 
 let btnDraw=document.querySelector(".draw--btn");//récupération du bouton de lancer
+let btnDelete=document.querySelector(".reset--option");
 
 let checkCheatOptions;//nom de la classe donnée par l'activation du menu "cheatmod" dans le fichier OptionsMenu.js
 let succesPriority=0;//Création de valeur pour l'option cheatMod
@@ -21,7 +22,11 @@ for(let dice of btnDice){//Pour chaque des de boutonDes
 
 btnDraw.addEventListener("click",drawDices);
 
+btnDelete.addEventListener("click",resetValues);
 //-------------------------------FONCTIONS-------------------------------//
+function resetValues(){//rechargement de la page
+  window.location.reload();
+}
 
 function getDice(){//récupérer la valeur du data et convertie en nombre 
     let faceDice=this.dataset.dice; 
@@ -72,8 +77,11 @@ function checkOptions(bonusCheck,malusCheck,basicResult){
       } 
       else if(malus>0){
          optionsResult=basicResult-malus;
-        displayAddResult.innerHTML=optionsResult;//affiche le résultat après calcul des options
-
+         if(optionsResult<0){
+            displayAddResult.innerHTML=0;
+         }else{
+           displayAddResult.innerHTML=optionsResult;//affiche le résultat après calcul des options
+         }
       }
   } else{
      displayAddResult.innerHTML=basicResult;
