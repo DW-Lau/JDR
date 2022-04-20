@@ -114,7 +114,7 @@ function critics(basicResult, convFace) {
 
   if (basicResult == convFace || basicResult == succes) {
     displayBasicResult.style.webkitTextStrokeColor = "#750E00";
-  } else if (basicResult == 1 || basicResult == 2) {
+  } else if (basicResult <= 2) {
     displayBasicResult.style.webkitTextStrokeColor = "#52FF4D";
   }
 }
