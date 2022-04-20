@@ -1,5 +1,7 @@
 # JDR
 /------------------- Application de lancer de Dés pour JDR -------------------/
+
+![image](https://user-images.githubusercontent.com/35140737/164208362-67f19483-7cad-4a5c-94c5-12d8fef06191.png)
  
  A Propos de l'application:
  
