@@ -19,7 +19,8 @@
 }
 $fontMdvl:'MedievalSharp', cursive;
 h1,p,label,input{
-    color:#fff;font-family: 'Original Surfer', cursive;
+    color:#fff;
+    font-family: 'Original Surfer', cursive;
 }
 body{
     @include aligment(column,space-evenly ,center );
@@ -208,6 +209,85 @@ body{
                 }//fin cheatMod
             }//fin header--options
         }
+        //------------------------- DEBUT MQ -------------------------//
+        //------------------------- DEBUT MQ -------------------------//
+        @include laptop{
+            header { 
+                .header--infos{
+                    max-width:35%;
+                    h1{
+                        font-size: 120px;
+                        line-height: 100px;
+                    }
+                    .exclamationMark{
+                        height: 40px;
+                        width: 40px;
+                        font-size: 1.5rem;
+                        border: solid #fff 2px;
+                        padding:5px;
+                    }
+                    .txt--infos {
+                         .infos,ul{
+                            font-size: 1em;
+                            list-style-type: square;
+                            color: #fff;
+                        }
+                        h2{
+                            width: 90%;
+                            margin: auto;
+                            font-size: 1.5em;
+                        }
+                    }
+                    .overlay{
+                        max-height: 80%;
+                        max-width: 80%;
+                        .close--infos{
+                            top: 3%;
+                            right: 3%;
+                            font-size: 1.4em;
+                        }
+                    }
+                }
+                .header--options { 
+                    max-width:60%;
+                    .reset{
+                        .reset--option{
+                            font-size: 1.2em;
+                        }
+                    }
+                        label{
+                            font-size: 1.5rem;
+                        }
+                        input{
+                            max-width:30px;
+                            font-size:1.5rem;
+                        }   
+                        .input--space{
+                            margin: 0 10px;
+                        }
+                    .cheatMod{
+                            width: 150px;
+                            .cheat  {//checkbox de l'input cheatbox modifié
+                                width:auto;
+                                height: auto;
+                                margin: 0 2px;
+                            }
+                            .inactivated{//Style par défault. Changement de menu depuis le JS
+                                 display: none;
+                            }
+                            .activeOptions{
+                                @include aligment(column,space-evenly ,flex-start );
+                                .Crit{
+                                    height:20px;
+                                }
+                            }//fin activeOptions
+                    }//fin cheatMod
+                }//fin header--options
+            }
+        }
+        //------------------------- FIN HEADER MQ -------------------------//
+        //------------------------- FIN HEADER MQ -------------------------//
+
  //----------------------------Fin Section HEADER----------------------------
         section{
         height: 40%;
@@ -278,7 +358,64 @@ body{
                 max-width: 200px;
             }
         }
-        }//----------------------------Fin Section SECTION----------------------------//
+        }
+        //------------------------- DEBUT MQ -------------------------//
+        //------------------------- DEBUT MQ -------------------------//
+        @include laptop{
+            section{
+                height: 30%;
+                @include aligment(row,space-between,baseline );
+                .draw ,.result{
+                    width: 35%;
+                    @include flexAlign(wrap,space-around,center);
+                }
+                .draw{
+                    .draw--number,.draw--dice{
+                        width: 50%;
+                    }
+                    .draw--dice{
+                        text-align: center;
+                    }
+                    .draw--display{
+                       width: 135px;
+                    }
+                    .draw--number p{
+                        text-align: left;
+                        font-size:10em;
+                    }
+                    .draw--btn:hover{
+                        .fa-solid{
+                            background-color: #5c4d02;
+                            font-size: 3.2em;
+                        }
+                    }
+                }//Fin DRAW
+                .equal { 
+                    img{
+                        max-width:150px;
+                    }
+                }
+                .result{
+                    .result--number,.result--swordsShield{
+                        width: 50%  ;
+                    }
+                    .result--swordsShield{
+                        text-align: right;
+                    }
+                    .result--number p{
+                        text-align: left;
+                        font-size:10em;
+                    }
+                    .result--swordsShield img{
+                        max-width: 155px;
+                    }
+                }
+                }
+        }
+        //------------------------- FIN section MQ -------------------------//
+        //------------------------- FIN section MQ -------------------------//
+        
+        //----------------------------Fin Section SECTION----------------------------//
         footer{
         height: 20%;
         .dices{
@@ -307,6 +444,24 @@ body{
             }
         }
         }
+        //------------------------- DEBUT MQ -------------------------//
+        //------------------------- DEBUT MQ -------------------------//
+        @include laptop{
+            footer{
+                .dices{
+                    .btn--dice{
+                        img{
+                            height:100px;
+                        }
+                        p{
+                            font-size:3em;
+                        }
+                    }
+                }
+                } 
+        }
+        //------------------------- FIN FOOTER MQ -------------------------//
+        //------------------------- FIN FOOTER MQ -------------------------//
 }
 @keyframes reload {
     100%{

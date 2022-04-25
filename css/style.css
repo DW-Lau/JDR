@@ -244,6 +244,78 @@ body header .header--options .cheatMod .activeOptions .Crit .cheat {
   height: 20px;
 }
 
+@media screen and (max-width: 1025px) {
+  body header .header--infos {
+    max-width: 35%;
+  }
+  body header .header--infos h1 {
+    font-size: 120px;
+    line-height: 100px;
+  }
+  body header .header--infos .exclamationMark {
+    height: 40px;
+    width: 40px;
+    font-size: 1.5rem;
+    border: solid #fff 2px;
+    padding: 5px;
+  }
+  body header .header--infos .txt--infos .infos, body header .header--infos .txt--infos ul {
+    font-size: 1em;
+    list-style-type: square;
+    color: #fff;
+  }
+  body header .header--infos .txt--infos h2 {
+    width: 90%;
+    margin: auto;
+    font-size: 1.5em;
+  }
+  body header .header--infos .overlay {
+    max-height: 80%;
+    max-width: 80%;
+  }
+  body header .header--infos .overlay .close--infos {
+    top: 3%;
+    right: 3%;
+    font-size: 1.4em;
+  }
+  body header .header--options {
+    max-width: 60%;
+  }
+  body header .header--options .reset .reset--option {
+    font-size: 1.2em;
+  }
+  body header .header--options label {
+    font-size: 1.5rem;
+  }
+  body header .header--options input {
+    max-width: 30px;
+    font-size: 1.5rem;
+  }
+  body header .header--options .input--space {
+    margin: 0 10px;
+  }
+  body header .header--options .cheatMod {
+    width: 150px;
+  }
+  body header .header--options .cheatMod .cheat {
+    width: auto;
+    height: auto;
+    margin: 0 2px;
+  }
+  body header .header--options .cheatMod .inactivated {
+    display: none;
+  }
+  body header .header--options .cheatMod .activeOptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  body header .header--options .cheatMod .activeOptions .Crit {
+    height: 20px;
+  }
+}
+
 body section {
   height: 40%;
   display: flex;
@@ -329,6 +401,56 @@ body section .result .result--swordsShield img {
   max-width: 200px;
 }
 
+@media screen and (max-width: 1025px) {
+  body section {
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  body section .draw, body section .result {
+    width: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  body section .draw .draw--number, body section .draw .draw--dice {
+    width: 50%;
+  }
+  body section .draw .draw--dice {
+    text-align: center;
+  }
+  body section .draw .draw--display {
+    width: 135px;
+  }
+  body section .draw .draw--number p {
+    text-align: left;
+    font-size: 10em;
+  }
+  body section .draw .draw--btn:hover .fa-solid {
+    background-color: #5c4d02;
+    font-size: 3.2em;
+  }
+  body section .equal img {
+    max-width: 150px;
+  }
+  body section .result .result--number, body section .result .result--swordsShield {
+    width: 50%;
+  }
+  body section .result .result--swordsShield {
+    text-align: right;
+  }
+  body section .result .result--number p {
+    text-align: left;
+    font-size: 10em;
+  }
+  body section .result .result--swordsShield img {
+    max-width: 155px;
+  }
+}
+
 body footer {
   height: 20%;
 }
@@ -367,6 +489,15 @@ body footer .dices .btn--dice:hover {
   border: 2px dashed;
   border-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
+}
+
+@media screen and (max-width: 1025px) {
+  body footer .dices .btn--dice img {
+    height: 100px;
+  }
+  body footer .dices .btn--dice p {
+    font-size: 3em;
+  }
 }
 
 @keyframes reload {
