@@ -285,6 +285,106 @@ body{
                 }//fin header--options
             }
         }
+        @include tab{
+            header {
+                .header--infos{
+                    h1{
+                        opacity: 0.85;
+                        font-size: 100px;
+                        line-height: 80px;
+                        -webkit-text-stroke: 1px #242424;
+                    }
+                    .exclamationMark{
+                        height: 30px;
+                        width: 30px;
+                        font-size: 1rem;
+                        padding:4px;
+                    }
+                    .txt--infos {
+                        display: none;
+                        .infos,ul,h2{
+                            font-size: 1em;
+                            a{
+                                color: #fff;
+                                font-size: 1rem;
+                            }
+                        }
+                        ul{
+                            line-height: 1.4rem;
+                            margin: 5px;
+                            padding-left: 2%;
+                        }
+                        h2{
+                            font-size: 2rem;
+                            padding-bottom: 25px;
+                            text-align: center;
+                        }
+                        table{
+                            width: 100%;
+                            color:#fff;
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 1.2em;
+                            line-height: 22px;
+                            margin-bottom: 2%;
+                            thead{
+                                tr td{
+                                    background-color: rgba(255, 255, 255, 0.1);
+                                    text-align: center;
+                                    padding-right: 5px;
+                                }
+                            }
+                            tbody{
+                                tr td{
+                                    padding: 15px;
+                                }
+                            }
+                        }
+                    }
+                    .overlay{
+                        max-height: 100%;
+                        width:100%;
+                        .close--infos{
+                            top: 3%;
+                            right: 3%;
+                        }
+                    }
+                }//FIN HEADER--INFOS
+    // ------------------------------------------FIN LAPTOP  HEADER INFOS-------------------------------------------//
+                .header--options { 
+                    max-width:765px;
+                    margin: 0;
+                    .reset{
+                        margin:auto 15px;
+                        .reset--option{
+                            font-size: 1.3em;
+                            color: #fff;
+                        }
+                    }
+                    @include aligment(column,space-between ,flex-end); 
+                        label{
+                            font-size: 1.3rem;
+                        }
+                        input{
+                            max-width:40px;
+                            font-size:1.2rem;
+                        }   
+                        .input--space{
+                            align-self: center;
+                            display: block;
+                            width: 50px;
+                            height: 2px;
+                            margin: 5px 0px;
+                        }
+                    .cheatMod{
+                            .cheat  {//checkbox de l'input cheatbox modifié
+                                width:20px;
+                                height: 20px;
+                                margin:0 10px
+                            }
+                    }//fin cheatMod
+                }//fin header--options
+            }
+        }
         //------------------------- FIN HEADER MQ -------------------------//
         //------------------------- FIN HEADER MQ -------------------------//
 
@@ -359,6 +459,7 @@ body{
             }
         }
         }
+        
         //------------------------- DEBUT MQ -------------------------//
         //------------------------- DEBUT MQ -------------------------//
         @include laptop{
@@ -412,6 +513,55 @@ body{
                 }
                 }
         }
+        @include tab{
+            section{
+                height: 35%;
+                @include aligment(column,space-evenly,center );
+                .draw ,.result{
+                    width: 90%;
+                    @include aligment(row,space-evenly ,center );
+                }
+                .draw{
+                    .draw--number,.draw--dice{
+                        width: 33%;
+                    }
+                    .draw--display{
+                       max-width: 120px;
+                    }
+                    .draw--number p{
+                        text-align: center;
+                        font-size:10em;
+                    }
+                    .draw--btn{
+                        width: 80px;
+                        height: 60px;
+                        .fa-solid{ 
+                            font-size:2.5em ;
+                        }
+                    }
+                }//Fin DRAW
+                .equal { 
+                    img{
+                        max-width:100px;
+                    }
+                }
+                .result{
+                    .result--number,.result--swordsShield{
+                        width: 50%  ;
+                    }
+                    .result--swordsShield{
+                        text-align: center;
+                    }
+                    .result--number p{
+                        text-align: center;
+                        font-size:10em;
+                    }
+                    .result--swordsShield img{
+                        max-width: 140px;
+                    }
+                }
+                }
+        }
         //------------------------- FIN section MQ -------------------------//
         //------------------------- FIN section MQ -------------------------//
         
@@ -444,6 +594,7 @@ body{
             }
         }
         }
+       
         //------------------------- DEBUT MQ -------------------------//
         //------------------------- DEBUT MQ -------------------------//
         @include laptop{
@@ -459,6 +610,29 @@ body{
                     }
                 }
                 } 
+        }
+        @include tab{
+            footer{
+                height: 30%;
+                width: 75%;
+                .dices{
+                    @include flexAlign(wrap,space-evenly ,center );
+                    width: 100%;
+                    .btn--dice{
+                        border:none;
+                        padding:2px;
+                        width: 25%;
+                        @include aligment(column,space-evenly ,center );
+                        img{
+                            height:80px;
+                        }
+                        p{
+                            text-align: center;
+                            font-size:2.5em;
+                        }
+                    }
+                }
+            }
         }
         //------------------------- FIN FOOTER MQ -------------------------//
         //------------------------- FIN FOOTER MQ -------------------------//
